@@ -32,7 +32,7 @@ class Api::AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(
-      :first_name, :last_name, :email, :phone, :company, :date, :time, :message
+      :first_name, :last_name, :email, :phone1, :phone2, :phone3, :company, :date, :time, :message
     )
   end
 end

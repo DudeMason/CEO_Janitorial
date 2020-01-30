@@ -1,8 +1,8 @@
 import React from 'react';
-import {Segment, Grid} from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 import { AppointmentConsumer } from "../../providers/AppointmentProvider";
 
-const Admin = ({ appoint: { appointments } }) => (
+const Admin = ({ appoint: { appointments, editAppoint, removeAppoint } }) => (
 
   <div align='center'>
     <Segment align='center' compact>
@@ -11,23 +11,7 @@ const Admin = ({ appoint: { appointments } }) => (
     <br/>
     {
       appointments.map( a =>
-        <Grid stackable className='grid'>
-          <Segment align='left'>
-            <u>Name</u>: {a.first_name} {a.last_name}
-            <br/>
-            <u>Phone</u>: {a.phone}
-            <br/>
-            <u>Email</u>: {a.email}
-            <br/>
-            <u>Company</u>: {a.company}
-            <br/>
-            <u>Date</u>: {a.date}
-            <br/>
-            <u>Time</u>: {a.time}
-            <br/>
-            <u>Message</u>: {a.message}
-          </Segment>
-        </Grid>
+        <Appointment key={a.id} {...a} editAppoint={editAppoint} removeAppoint={removeAppoint}/>
       )
     }
   </div>
