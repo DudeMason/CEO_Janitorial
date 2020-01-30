@@ -138,7 +138,7 @@ class AppointmentForm extends Component {
               <br/>
               <textarea id='message' type='textarea' rows="5" cols="50" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
               <br/>
-              <input type="submit" value="Submit" onClick="alert('Appointment Set!')"/>
+              <input type="submit" value="Submit"/>
             </form>
           </div>
         }
