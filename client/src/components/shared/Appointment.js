@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { Segment, Grid } from 'semantic-ui-react';
+import { Segment, Grid, Button, Icon } from 'semantic-ui-react';
 import AppointmentForm from './AppointmentForm';
 
 function Appointment({
-  appoint, first_name, last_name, phone1, phone2, phone3, company, email, date, time, message,
-  appoint: {editAppoint, removeAppoint}
+  appoint, id, first_name, last_name, phone1, phone2, phone3, company, email, date, time, message,
+  appoint: {editAppoint, removeAppoint, appointments}
 }) {
 
   const [edit, toggleEdit] = useState(false)
@@ -17,30 +17,62 @@ function Appointment({
         edit
         ?
         <>
-          <Grid stackable className='grid'>
+          <Grid.Column>
             <Segment align='left'>
-              <AppointmentForm editAppoint={editAppoint}/>
+              <AppointmentForm key={id}
+                first={first_name}
+                last={last_name}
+                phone1={phone1}
+                phone2={phone2}
+                phone3={phone3}
+                company={company}
+                email={email}
+                date={date.slice(0, 10)}
+                time={time}
+                message={message}
+                editAppoint={editAppoint}
+                removeAppoint={removeAppoint}
+                edit={edit}
+                id={id}
+                toggleEdit={toggleEdit}
+              />
             </Segment>
-          </Grid>
+          </Grid.Column>
         </>
         :
-        <Grid stackable className='grid'>
+        <Grid.Column>
           <Segment align='left'>
-            <u>Name</u>: {first_name} {last_name}
+            <u>Name</u>:
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {first_name} {last_name}
             <br/>
-            <u>Phone</u>: {phone1} - {phone2} - {phone3}
+            <u>Phone</u>:
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {phone1} - {phone2} - {phone3}
             <br/>
-            <u>Email</u>: {email}
+            <u>Email</u>:
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {email}
             <br/>
-            <u>Company</u>: {company}
+            <u>Company</u>:
+              {company}
             <br/>
-            <u>Date</u>: {realDate}
+            <u>Date</u>:
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {realDate}
             <br/>
-            <u>Time</u>: {time}
+            <u>Time</u>:
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              {time}
             <br/>
-            <u>Message</u>: {message}
+            <u>Message</u>:
+              {message}
+            <br/>
+            <br/>
+            <Button color='blue' onClick={() => toggleEdit(!edit)}><Icon name='pencil'/></Button>
+            <Button color='red' onClick={() => removeAppoint(id)}><Icon name='trash'/></Button>
           </Segment>
-        </Grid>
+        </Grid.Column>
       }
     </>
   )
