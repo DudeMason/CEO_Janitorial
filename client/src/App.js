@@ -14,7 +14,7 @@ import Admin from './components/auth/Admin';
 
 const App = () => (
 
-  <div className='background' style={{paddingBottom: 30}}>
+  <div className='background'>
     <Navbar />
     <FetchUser>
       <Switch>

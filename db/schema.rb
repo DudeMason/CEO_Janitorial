@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_01_30_145739) do
     t.string "email"
     t.string "company"
     t.datetime "date"
-    t.time "time"
+    t.string "time"
     t.string "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

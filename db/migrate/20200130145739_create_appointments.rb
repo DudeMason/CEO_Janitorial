@@ -9,7 +9,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :company
       t.datetime :date
-      t.time :time
+      t.string :time
       t.string :message
 
       t.timestamps

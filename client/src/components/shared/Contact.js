@@ -1,12 +1,19 @@
 import React from 'react';
 import Ceo from './media/images/Ceo.png';
 import AppointmentForm from './AppointmentForm';
+import { Grid } from 'semantic-ui-react';
 
 const Contact = () => (
 
   <div>
-    <AppointmentForm />
-    <img src={Ceo} className='bizCard' width='75%' alt='801-510-8656 -- ceojanitorial@gmail.com'></img>
+    <Grid columns='2'>
+      <Grid.Column>
+        <AppointmentForm />
+      </Grid.Column>
+      <Grid.Column>
+        <img src={Ceo} className='bizCard' width='95%' alt='801-510-8656 -- ceojanitorial@gmail.com'></img>
+      </Grid.Column>
+    </Grid>
   </div>
 )
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
 import { AppointmentConsumer } from "../../providers/AppointmentProvider";
+import Appointment from '../shared/Appointment';
 
-const Admin = ({ appoint: { appointments, editAppoint, removeAppoint } }) => (
+const Admin = ({ appoint: {appointments}, appoint }) => (
 
   <div align='center'>
     <Segment align='center' compact>
@@ -11,7 +12,7 @@ const Admin = ({ appoint: { appointments, editAppoint, removeAppoint } }) => (
     <br/>
     {
       appointments.map( a =>
-        <Appointment key={a.id} {...a} editAppoint={editAppoint} removeAppoint={removeAppoint}/>
+        <Appointment key={a.id} {...a} appoint={appoint} appointments={appointments}/>
       )
     }
   </div>

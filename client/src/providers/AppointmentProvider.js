@@ -6,8 +6,6 @@ export const AppointmentConsumer = AppointmentContext.Consumer;
 
 export default class AppointmentProvider extends Component {
 
-
-
   state = { appointments: [] }
 
   componentDidMount() {

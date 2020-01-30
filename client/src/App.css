@@ -2,7 +2,7 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  height: 105vh;
 }
 
 .hotdog {
@@ -34,14 +34,15 @@ p {
   margin-right: auto;
   display: block;
   opacity: .95;
+  margin: 20px;
 }
 
-.appointmentForm input[type=text], select {
+.appointmentForm input[type=text], [type=textarea] {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  padding: 7px;
+  padding: 8px;
 }
 .appointmentForm input[type=submit] {
   width: 100px;
@@ -53,13 +54,22 @@ p {
   border-radius: 4px;
   cursor: pointer;
 }
-.appointmentForm input[type=date] {
-  width: 130px;
+.appointmentForm input[type=date], [type=time] {
+  width: 170px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5px;
+  outline: none;
 }
 
 .appointmentForm {
   background-color: #f9f9f9;
-  margin: 30px;
-  padding: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
   opacity: .95;
+  padding-left: 30px;
+  padding-top: 20px;
 }
