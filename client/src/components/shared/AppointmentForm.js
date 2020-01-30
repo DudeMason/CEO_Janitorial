@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { AppointmentConsumer } from "../../providers/AppointmentProvider";
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Icon, Modal, Header } from 'semantic-ui-react';
 
 class AppointmentForm extends Component {
 
@@ -126,7 +126,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='date' style={{fontSize: 15}}>Date</label>
               <br/>
-              <input id='date' type='date' name='date' value={date} onChange={this.handleChange} required/>
+              <input id='date' type='date' name='date' value={date} min='2020-02-01' max='2022-01-01' onChange={this.handleChange} required/>
               <br/>
               <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
@@ -138,7 +138,7 @@ class AppointmentForm extends Component {
               <br/>
               <textarea id='message' type='textarea' rows="5" cols="50" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
               <br/>
-              <input type="submit" value="Submit"/>
+              <input type="submit" value="Submit" onClick="alert('Appointment Set!')"/>
             </form>
           </div>
         }
