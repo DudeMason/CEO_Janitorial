@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// use the react context api
 const AuthContext = React.createContext();
-
-// Consumer, exportable wrapper that gives to access to the data in the provider
 export const AuthConsumer = AuthContext.Consumer;
 
-// provider want to have global
 class AuthProvider extends Component {
   state = { user: null }
 
