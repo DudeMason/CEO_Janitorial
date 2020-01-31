@@ -4,7 +4,7 @@ import { Segment, Button, Container } from 'semantic-ui-react';
 
 const About = () => (
 
-  <div>
+  <div style={{height: '100vh'}}>
     <Container textAlign='justified'>
     <Segment style={{opacity: .9, padding: 25}}>
       <h2>CEO Janitorial</h2>

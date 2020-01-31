@@ -42,7 +42,7 @@ class AppointmentForm extends Component {
   render() {
     const{ first_name, last_name, email, phone1, phone2, phone3, company, date, time, message } = this.state
     return(
-      <div>
+      <div style={{height: '100vh'}}>
         {
           this.props.edit
           ?
@@ -104,7 +104,6 @@ class AppointmentForm extends Component {
               &nbsp;&nbsp;&nbsp;
               <input type="text" name='last_name' value={last_name} onChange={this.handleChange} placeholder='Last Name' size='40'/>
               <br/>
-              <br/>
               <label htmlFor='number' style={{fontSize: 15}}>Phone</label>
               <br/>
               <input type="text" id='number' className='phoneNumber' maxLength="3" name='phone1' value={phone1} onChange={this.handleChange} placeholder='000' required/>
@@ -113,26 +112,21 @@ class AppointmentForm extends Component {
               &nbsp; - &nbsp;
               <input type="text" className='phoneNumbers' name='phone3' value={phone3} onChange={this.handleChange} placeholder='0000' maxLength="4" required/>
               <br/>
-              <br/>
               <label htmlFor='email' style={{fontSize: 15}}>Email</label>
               <br/>
               <input type="text" id='email' placeholder='Email' name='email' value={email} onChange={this.handleChange} size='40' required/>
-              <br/>
               <br/>
               <label htmlFor='company' style={{fontSize: 15}}>Company</label>
               <br/>
               <input type="text" id='company' name='company' value={company} onChange={this.handleChange} placeholder='Company Name' size='40'/>
               <br/>
-              <br/>
               <label htmlFor='date' style={{fontSize: 15}}>Date</label>
               <br/>
               <input id='date' type='date' name='date' value={date} min='2020-02-01' max='2022-01-01' onChange={this.handleChange} required/>
               <br/>
-              <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
               <br/>
               <input id='time' type='time' min='06:00:00' max='21:00:00' name='time' value={time} onChange={this.handleChange} required/>
-              <br/>
               <br/>
               <label htmlFor='message'>Message:</label>
               <br/>

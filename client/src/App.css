@@ -2,7 +2,6 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 105vh;
 }
 
 .hotdog {
@@ -30,11 +29,9 @@ p {
 }
 
 .bizCard {
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   display: block;
   opacity: .95;
-  margin: 20px;
 }
 
 .appointmentForm input[type=text], [type=textarea] {
@@ -43,6 +40,7 @@ p {
   border-radius: 4px;
   box-sizing: border-box;
   padding: 8px;
+  margin-bottom: 11px;
 }
 .appointmentForm input[type=submit] {
   width: 100px;
@@ -62,14 +60,13 @@ p {
   box-sizing: border-box;
   padding: 5px;
   outline: none;
+  margin-bottom: 11px;
 }
 
 .appointmentForm {
   background-color: #f9f9f9;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
   opacity: .95;
   padding-left: 30px;
   padding-top: 20px;
+  margin-left: 11px;
 }
