@@ -2,6 +2,7 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center; 
 }
 
 p {
