@@ -19,6 +19,12 @@ const Navbar = () => (
         </Menu.Item>
       </Link>
 
+      <Link to='/photos'>
+        <Menu.Item>
+          Photos
+        </Menu.Item>
+      </Link>
+
       <Link to='/contact'>
         <Menu.Item>
           <Icon name='phone'/>

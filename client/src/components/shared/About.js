@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Button, Container } from 'semantic-ui-react';
+import Emp1 from './media/images/Emp1.png'
+import Emp2 from './media/images/Emp2.png'
+import Emp3 from './media/images/Emp3.png'
+import Emp4 from './media/images/Emp4.png'
 
 const About = () => (
 
@@ -16,6 +20,16 @@ const About = () => (
         of corporate accounts and maintained the team as well as the relationships.
         We are licensed, insured, and staffed appropriately to service businesses.
       </p>
+    </Segment>
+    <br/>
+    <Segment className='leaders' align='center' style={{opacity: .9}}>
+      <p>
+        Here are of few of our great leaders
+      </p>
+      <img src={Emp4} width='250' alt='Juan Leon'/>
+      <img src={Emp3} width='250' alt='Johanna Hernandez'/>
+      <img src={Emp2} width='250' alt='Daniel Gomez'/>
+      <img src={Emp1} width='250' alt='Zarayen Oviedo'/>
     </Segment>
     <br/>
     </Container>

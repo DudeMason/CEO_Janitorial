@@ -25,36 +25,33 @@ import After1 from './images/After1.png';
 import Befoore from './images/Befoore.png';
 import Duriing from './images/Duriing.png';
 import Afteer from './images/Afteer.png';
+import Clean from './images/Clean.png';
+import Duster from './images/Duster.png';
+import Nice1 from './images/Nice1.png';
+import Nice2 from './images/Nice2.png';
+import Nice3 from './images/Nice3.png';
+import Nice4 from './images/Nice4.png';
+import Nice5 from './images/Nice5.png';
+import Uni from './images/Uni.png';
+import UniClean from './images/UniClean.png';
+import VacBack from './images/VacBack.png';
+import VacClose from './images/VacClose.png';
+import VacNice from './images/VacNice.png';
+import Vacuum from './images/Vacuum.png';
 
 function Photos() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [
-    Elementary,
-    ExtendoBrush,
-    Shiny,
-    Floor,
-    Bucket,
-    Window,
-    Windoow,
-    Squeak,
-    Squeeak,
-    Win,
-    High,
-    Door,
-    Showerhead,
-    Hall,
-    Before1,
-    Before2,
-    During1,
-    During2,
-    After1,
-    Duriing,
-    Befoore,
-    Afteer,
-    Fan,
-    Vac,
-    Ladder,
+    Elementary, ExtendoBrush, Shiny, Floor, Bucket, Window, Windoow,
+    Squeak, Squeeak, Win, High, Door, UniClean, Showerhead, Hall, Before1,
+    Before2, During1, During2, After1, Duster, Uni, VacBack, VacClose,
+    VacNice, Vacuum, Ladder, Duriing,  Nice1,  Nice3, Nice5,
+  ];
+
+  const shortImages = [
+    Befoore, Afteer,
+    Fan, Vac, Clean, Nice2, Nice4,
   ];
 
   const openImageViewer = useCallback(index => {
@@ -70,6 +67,17 @@ function Photos() {
   return (
     <div align='center' className='hotdog' style={{margin: -15}}>
       {images.map((src, index) => (
+        <img
+          src={src}
+          onClick={() => openImageViewer(index)}
+          width="300"
+          key={index}
+          style={{ margin: "2px" }}
+          alt=""
+        />
+      ))}
+      <br/>
+      {shortImages.map((src, index) => (
         <img
           src={src}
           onClick={() => openImageViewer(index)}

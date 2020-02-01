@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { AppointmentConsumer } from "../../providers/AppointmentProvider";
-import { Button, Icon, Modal, Header } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 class AppointmentForm extends Component {
 

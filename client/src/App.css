@@ -4,13 +4,6 @@
   background-repeat: no-repeat;
 }
 
-.hotdog {
-  background-image: url('./components/shared/media/images/Background.png');
-  background-position: center;
-  background-size: cover;
-  padding-bottom: 50px;
-}
-
 p {
   font-size: 13pt;
 }
@@ -69,4 +62,8 @@ p {
   padding-left: 30px;
   padding-top: 20px;
   margin-left: 11px;
+}
+
+.leaders img {
+  margin: 10px;
 }
