@@ -24,7 +24,7 @@ const About = () => (
     <br/>
     <Segment className='leaders' align='center' style={{opacity: .9}}>
       <p>
-        Here are of few of our great leaders
+        <u>Here are of few of our great leaders</u>
       </p>
       <img src={Emp4} width='250' alt='Juan Leon'/>
       <img src={Emp3} width='250' alt='Johanna Hernandez'/>
