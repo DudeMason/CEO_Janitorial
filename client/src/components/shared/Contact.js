@@ -6,7 +6,7 @@ import { Grid } from 'semantic-ui-react';
 const Contact = () => (
 
   <div>
-    <Grid columns='2'>
+    <Grid columns='2' stackable>
       <Grid.Column>
         <AppointmentForm />
       </Grid.Column>

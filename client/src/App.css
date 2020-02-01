@@ -2,7 +2,7 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
 }
 
 p {
@@ -62,7 +62,8 @@ p {
   opacity: .95;
   padding-left: 30px;
   padding-top: 20px;
-  margin-left: 11px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .leaders img {

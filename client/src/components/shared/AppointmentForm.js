@@ -81,7 +81,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='message'>Message:</label>
               <br/>
-              <textarea id='message' type='textarea' rows="5" cols="50" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
+              <textarea id='message' type='textarea' rows="5" cols="40" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
               <br/>
               <input type="submit" value="Submit"/>
               <Button color='red' floated='right' onClick={() => {this.props.removeAppoint(this.props.id); this.props.toggleEdit(!this.props.edit);}}><Icon name='trash'/></Button>
@@ -124,7 +124,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='message'>Message:</label>
               <br/>
-              <textarea id='message' type='textarea' rows="5" cols="50" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
+              <textarea id='message' type='textarea' rows="5" cols="40" name='message' value={message} onChange={this.handleChange} placeholder='Your message here'/>
               <br/>
               <input type="submit" value="Submit"/>
             </form>
