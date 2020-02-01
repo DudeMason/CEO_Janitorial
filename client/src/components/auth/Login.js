@@ -19,9 +19,9 @@ class Login extends React.Component {
     const { email, password, } = this.state;
 
     return (
-      <Segment basic>
+      <Segment basic style={{height: '100vh'}}>
         <Header as='h1' textAlign='center'>Login</Header>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} inverted>
           <Form.Input
             label="Email"
             autoFocus
