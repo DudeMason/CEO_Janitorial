@@ -5,6 +5,11 @@
   background-position: center;
 }
 
+.background a {
+  color: navy;
+  opacity: inherit;
+}
+
 p {
   font-size: 13pt;
 }
