@@ -25,41 +25,43 @@ class Register extends React.Component {
     const { email, password, passwordConfirmation, } = this.state;
 
     return (
-      <Segment basic style={{height: '100vh'}}>
-        <Header as='h1' textAlign='center'>Register</Header>
-        <Form onSubmit={this.handleSubmit} inverted>
-          <Form.Input
-            label="Email"
-            required
-            autoFocus
-            name='email'
-            value={email}
-            placeholder='Email'
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            label="Password"
-            required
-            name='password'
-            value={password}
-            placeholder='Password'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            label="Password Confirmation"
-            required
-            name='passwordConfirmation'
-            value={passwordConfirmation}
-            placeholder='Password Confirmation'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
-          </Segment>
-        </Form>
-      </Segment>
+      <div style={{height: '100vh'}} align='center'>
+        <Segment compact style={{opacity: .9}} align='center'>
+          <Header as='h1' textAlign='center'>Register</Header>
+          <Form onSubmit={this.handleSubmit} style={{width: '500px'}}>
+            <Form.Input
+              label="Email"
+              required
+              autoFocus
+              name='email'
+              value={email}
+              placeholder='Email'
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Password"
+              required
+              name='password'
+              value={password}
+              placeholder='Password'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label="Password Confirmation"
+              required
+              name='passwordConfirmation'
+              value={passwordConfirmation}
+              placeholder='Password Confirmation'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <Segment textAlign='center' basic>
+              <Button primary fluid type='submit'>Submit</Button>
+            </Segment>
+          </Form>
+        </Segment>
+      </div>
     )
   }
 }

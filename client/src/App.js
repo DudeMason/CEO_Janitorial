@@ -11,7 +11,6 @@ import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Admin from './components/auth/Admin';
-import { Segment } from 'semantic-ui-react';
 
 const App = () => (
 
@@ -32,7 +31,7 @@ const App = () => (
     <p style={{paddingBottom: 30, opacity: .8, paddingTop: 40}} align='center'>
       © 2020 Website Created by Mason D Eyre
       <br/>
-      <a href='mailto:mason.deyre@gmail.com' target='_blank'>
+      <a href='mailto:mason.deyre@gmail.com' target='_blank' rel='noopener noreferrer'>
         mason.deyre@gmail.com
       </a>
     </p>
