@@ -5,7 +5,7 @@ import Appointment from '../shared/Appointment';
 
 const Admin = ({ appoint: {appointments}, appoint }) => (
 
-  <div align='center'>
+  <div align='center' style={{height: '100vh'}}>
     <Segment align='center' compact>
       <h1>Appointments</h1>
     </Segment>

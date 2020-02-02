@@ -1,39 +1,72 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter, } from 'react-router-dom';
 import { Menu, Icon } from 'semantic-ui-react';
+import { AuthConsumer, } from "../../providers/AuthProvider";
 
-const Navbar = () => (
+class Navbar extends React.Component {
 
-  <Menu stackable>
+  rightNavItems = () => {
+    const { auth: { user, handleLogout } } = this.props;
 
-    <Link to='/'>
-      <Menu.Item>
-        <Icon name='home'/>
-      </Menu.Item>
-    </Link>
+  if (user) {
+      return (
+        <Menu position='right'>
+          <Menu.Item
+            name='logout'
+            onClick={ () => handleLogout(this.props.history) }
+          />
+        </Menu>
+      )
+    }
+  }
 
-    <Menu.Menu position='right'>
-      <Link to='/about'>
-        <Menu.Item>
-          About
-        </Menu.Item>
-      </Link>
+  render() {
+    return(
 
-      <Link to='/photos'>
-        <Menu.Item>
-          Photos
-        </Menu.Item>
-      </Link>
+      <Menu stackable>
 
-      <Link to='/contact'>
-        <Menu.Item>
-          <Icon name='phone'/>
-          Contact
-        </Menu.Item>
-      </Link>
-    </Menu.Menu>
+        <Link to='/'>
+          <Menu.Item>
+            <Icon name='home'/>
+          </Menu.Item>
+        </Link>
+        { this.rightNavItems() }
+        <Menu.Menu position='right'>
+          <Link to='/about'>
+            <Menu.Item>
+              About
+            </Menu.Item>
+          </Link>
 
-  </Menu>
-)
+          <Link to='/photos'>
+            <Menu.Item>
+              Photos
+            </Menu.Item>
+          </Link>
 
-export default Navbar;
+          <Link to='/contact'>
+            <Menu.Item>
+              <Icon name='phone'/>
+              Contact
+            </Menu.Item>
+          </Link>
+        </Menu.Menu>
+
+      </Menu>
+    )
+  }
+}
+
+export class ConnectedNavbar extends React.Component {
+  render() {
+    return (
+      <AuthConsumer>
+        { auth =>
+          <Navbar { ...this.props } auth={auth} />
+        }
+      </AuthConsumer>
+    )
+  }
+}
+
+export default withRouter(ConnectedNavbar);
