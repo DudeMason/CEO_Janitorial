@@ -26,9 +26,9 @@ class Register extends React.Component {
 
     return (
       <div style={{height: '100vh'}} align='center'>
-        <Segment compact style={{opacity: .9}} align='center'>
+        <Segment compact style={{opacity: .9, width: '70%'}} align='center'>
           <Header as='h1' textAlign='center'>Register</Header>
-          <Form onSubmit={this.handleSubmit} style={{width: '500px'}}>
+          <Form onSubmit={this.handleSubmit} style={{width: '90%'}}>
             <Form.Input
               label="Email"
               required
