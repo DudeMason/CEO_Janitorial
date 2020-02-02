@@ -43,10 +43,10 @@ function Photos() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [
-    Elementary, ExtendoBrush, Shiny, Floor, Bucket, Window, Windoow,
-    Squeak, Squeeak, Win, High, Door, UniClean, Showerhead, Hall, Before1,
-    Before2, During1, During2, After1, Duster, Uni, VacBack, VacClose,
-    VacNice, Vacuum, Ladder, Duriing,  Nice1,  Nice3, Nice5,
+    Door, UniClean, Duster, Uni, VacBack, VacClose, VacNice, Vacuum,
+    Nice1,  Nice3, Nice5, Shiny, Floor, Before1, Before2, During1, During2,
+    After1, Ladder, Squeak, Squeeak, Win, High, Hall, Elementary,
+    ExtendoBrush, Bucket, Window, Windoow, Showerhead, Duriing,
   ];
 
   const shortImages = [
