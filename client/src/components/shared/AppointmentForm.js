@@ -51,17 +51,17 @@ class AppointmentForm extends Component {
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>
               <br/>
-              <input type="text" id='firstName' name='first_name' value={first_name} onChange={this.handleChange} placeholder='First Name' size='30' required/>
+              <input type="text" id='firstName' name='first_name' value={first_name} onChange={this.handleChange} placeholder='First Name' required/>
               &nbsp;&nbsp;&nbsp;
-              <input type="text" name='last_name' value={last_name} onChange={this.handleChange} placeholder='Last Name' size='40'/>
+              <input type="text" name='last_name' value={last_name} onChange={this.handleChange} placeholder='Last Name'/>
               <br/>
               <label htmlFor='number' style={{fontSize: 15}}>Phone</label>
               <br/>
-              <input type="text" id='number' className='phoneNumber' maxLength="3" name='phone1' value={phone1} onChange={this.handleChange} placeholder='000' required/>
+              <input type="tel" id='number' className='phoneNumber' maxLength="3" name='phone1' value={phone1} onChange={this.handleChange} placeholder='000' required/>
               &nbsp; - &nbsp;
-              <input type="text" className='phoneNumber' name='phone2' value={phone2} onChange={this.handleChange} placeholder='000' maxLength="3" required/>
+              <input type="tel" className='phoneNumber' name='phone2' value={phone2} onChange={this.handleChange} placeholder='000' maxLength="3" required/>
               &nbsp; - &nbsp;
-              <input type="text" className='phoneNumbers' name='phone3' value={phone3} onChange={this.handleChange} placeholder='0000' maxLength="4" required/>
+              <input type="tel" className='phoneNumbers' name='phone3' value={phone3} onChange={this.handleChange} placeholder='0000' maxLength="4" required/>
               <br/>
               <label htmlFor='email' style={{fontSize: 15}}>Email</label>
               <br/>
@@ -94,17 +94,17 @@ class AppointmentForm extends Component {
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>
               <br/>
-              <input type="text" id='firstName' name='first_name' value={first_name} onChange={this.handleChange} placeholder='First Name' size='30' required/>
+              <input type="text" id='firstName' name='first_name' value={first_name} onChange={this.handleChange} placeholder='First Name' required/>
               &nbsp;&nbsp;&nbsp;
-              <input type="text" name='last_name' value={last_name} onChange={this.handleChange} placeholder='Last Name' size='40'/>
+              <input type="text" name='last_name' value={last_name} onChange={this.handleChange} placeholder='Last Name'/>
               <br/>
               <label htmlFor='number' style={{fontSize: 15}}>Phone</label>
               <br/>
-              <input type="text" id='number' className='phoneNumber' maxLength="3" name='phone1' value={phone1} onChange={this.handleChange} placeholder='000' required/>
+              <input type="tel" id='number' className='phoneNumber' maxLength="3" name='phone1' value={phone1} onChange={this.handleChange} placeholder='000' required/>
               &nbsp; - &nbsp;
-              <input type="text" className='phoneNumber' name='phone2' value={phone2} onChange={this.handleChange} placeholder='000' maxLength="3" required/>
+              <input type="tel" className='phoneNumber' name='phone2' value={phone2} onChange={this.handleChange} placeholder='000' maxLength="3" required/>
               &nbsp; - &nbsp;
-              <input type="text" className='phoneNumbers' name='phone3' value={phone3} onChange={this.handleChange} placeholder='0000' maxLength="4" required/>
+              <input type="tel" className='phoneNumbers' name='phone3' value={phone3} onChange={this.handleChange} placeholder='0000' maxLength="4" required/>
               <br/>
               <label htmlFor='email' style={{fontSize: 15}}>Email</label>
               <br/>
