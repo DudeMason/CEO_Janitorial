@@ -2,7 +2,7 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-position: center;
-  background-attachment: local;
+  background-repeat: no-repeat;
   height: calc(100vh);
   overflow-y: auto;
 }
