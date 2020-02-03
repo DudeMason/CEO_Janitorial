@@ -8,7 +8,7 @@ import Emp4 from './media/images/Emp4.png'
 
 const About = () => (
 
-  <div style={{height: '150vh'}}>
+  <div style={{height: '100vh'}}>
     <Container textAlign='justified'>
     <Segment style={{opacity: .9, padding: 25}}>
       <h2>CEO Janitorial</h2>
@@ -39,6 +39,17 @@ const About = () => (
           Photos
         </Button>
       </Link>
+      <p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
+        © 2020 Website Created by Mason D Eyre
+        <br/>
+        <a href='mailto:mason.deyre@gmail.com' target='_blank' rel='noopener noreferrer'>
+          mason.deyre@gmail.com
+        </a>
+        <br/>
+        <a href='http://www.masoneyre.com' target='_blank' rel='noopener noreferrer'>
+          www.masoneyre.com
+        </a>
+      </p>
     </div>
   </div>
 )

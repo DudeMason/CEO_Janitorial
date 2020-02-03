@@ -2,6 +2,9 @@
   background-image: url('./components/shared/media/images/Background.png');
   background-size: cover;
   background-position: center;
+  background-attachment: local;
+  height: calc(100vh);
+  overflow-y: auto;
 }
 
 .background a {
