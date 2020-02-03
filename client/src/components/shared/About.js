@@ -8,7 +8,7 @@ import Emp4 from './media/images/Emp4.png'
 
 const About = () => (
 
-  <div style={{height: '100vh'}}>
+  <div style={{height: '150vh'}}>
     <Container textAlign='justified'>
     <Segment style={{opacity: .9, padding: 25}}>
       <h2>CEO Janitorial</h2>
