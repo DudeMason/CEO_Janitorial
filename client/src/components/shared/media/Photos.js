@@ -42,6 +42,10 @@ import Vacuum from './images/Vacuum.png';
 function Photos() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const [currentShortImage, setCurrentShortImage] = useState(0);
+  const [isShortViewerOpen, setIsShortViewerOpen] = useState(false);
+
   const images = [
     Door, UniClean, Duster, Uni, VacBack, VacClose, VacNice, Vacuum,
     Nice1,  Nice3, Nice5, Shiny, Floor, Before1, Before2, During1, During2,
@@ -58,10 +62,18 @@ function Photos() {
     setCurrentImage(index);
     setIsViewerOpen(true);
   }, []);
-
   const closeImageViewer = () => {
     setCurrentImage(0);
     setIsViewerOpen(false);
+  };
+
+  const openShortImageViewer = useCallback(index => {
+    setCurrentShortImage(index);
+    setIsShortViewerOpen(true);
+  }, []);
+  const closeShortImageViewer = () => {
+    setCurrentShortImage(0);
+    setIsShortViewerOpen(false);
   };
 
   return (
@@ -80,7 +92,7 @@ function Photos() {
       {shortImages.map((src, index) => (
         <img
           src={src}
-          onClick={() => openImageViewer(index)}
+          onClick={() => openShortImageViewer(index)}
           width="300"
           key={index}
           style={{ margin: "2px" }}
@@ -105,6 +117,16 @@ function Photos() {
           src={images}
           currentIndex={currentImage}
           onClose={closeImageViewer}
+          backgroundStyle={{
+            backgroundColor: "rgba(0,0,0,0.9)"
+          }}
+        />
+      )}
+      {isShortViewerOpen && (
+        <ImageViewer
+          src={shortImages}
+          currentIndex={currentShortImage}
+          onClose={closeShortImageViewer}
           backgroundStyle={{
             backgroundColor: "rgba(0,0,0,0.9)"
           }}
