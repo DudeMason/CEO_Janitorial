@@ -5,8 +5,8 @@ import { Button, Icon } from 'semantic-ui-react';
 class AppointmentForm extends Component {
 
   state = {
-    first_name: '', last_name: '', phone1: undefined, phone2: undefined, phone3: undefined,
-    email: '', company: '', date: 0, time: 0, message: ''
+    first_name: undefined, last_name: undefined, phone1: undefined, phone2: undefined, phone3: undefined,
+    email: undefined, company: undefined, date: undefined, time: undefined, message: undefined
   }
 
   componentDidMount() {
@@ -29,8 +29,8 @@ class AppointmentForm extends Component {
       this.props.appoint.addAppoint(this.state)
     }
     this.setState({
-      first_name: '', last_name: '', phone1: '', phone2: '', phone3: '',
-      email: '', company: '', date: 0, time: 0, message: ''
+      first_name: undefined, last_name: undefined, phone1: undefined, phone2: undefined, phone3: undefined,
+      email: undefined, company: undefined, date: 0, time: 0, message: undefined
     })
   }
 
@@ -73,7 +73,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='date' style={{fontSize: 15}}>Date</label>
               <br/>
-              <input id='date' type='date' name='date' value={date} onChange={this.handleChange} />
+              <input id='date' type='date' name='date' value={date} min='2020-01-01' onChange={this.handleChange} />
               <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
               <br/>
@@ -116,7 +116,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='date' style={{fontSize: 15}}>Date</label>
               <br/>
-              <input id='date' type='date' name='date' value={date} min='2020-02-01' max='2022-01-01' onChange={this.handleChange} required/>
+              <input id='date' type='date' name='date' value={date} min='2020-01-01' onChange={this.handleChange} required/>
               <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
               <br/>

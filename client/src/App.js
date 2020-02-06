@@ -7,7 +7,6 @@ import Photos from './components/shared/media/Photos';
 import NoMatch from './components/shared/NoMatch';
 import Navbar from './components/shared/Navbar';
 import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Admin from './components/auth/Admin';
