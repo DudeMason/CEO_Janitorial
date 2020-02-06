@@ -24,7 +24,6 @@ const App = () => (
         <Route exact path='/photos' component={Photos}/>
         <ProtectedRoute exact path='/admin' component={Admin} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
         <Route component={NoMatch} />
       </Switch>
     </FetchUser>
