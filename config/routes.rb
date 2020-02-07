@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users
     resources :appointments
+    resources :appointment_senders, only: [:create]
   end
 
-  resources :project_senders, only: [:create]
 
   get '*other', to: 'static#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

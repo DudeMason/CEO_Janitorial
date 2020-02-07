@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { AppointmentConsumer } from "../../providers/AppointmentProvider";
 import { Button, Icon } from 'semantic-ui-react';
+import axios from 'axios';
 
 class AppointmentForm extends Component {
 
@@ -20,13 +21,13 @@ class AppointmentForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
     if (this.props.id) {
       this.props.editAppoint( this.props.id, this.state )
       this.props.toggleEdit(!this.props.edit)
     }
     else {
       this.props.appoint.addAppoint(this.state)
+      this.emailSubmit(this.state.email)
     }
     this.setState({
       first_name: undefined, last_name: undefined, phone1: undefined, phone2: undefined, phone3: undefined,
@@ -37,6 +38,17 @@ class AppointmentForm extends Component {
   handleChange = (e) => {
     const {name, value} = e.target
     this.setState({[name]: value})
+  }
+
+  emailSubmit = (email) => {
+    const params = {...this.state, email}
+    axios.post('/api/appointment_senders', params)
+    .then( res => {
+      return res.data
+    })
+    .catch( err => {
+      console.log(err)
+    })
   }
 
   render() {
