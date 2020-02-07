@@ -59,7 +59,6 @@ class AppointmentForm extends Component {
           this.props.edit
           ?
           <div className='appointmentForm'>
-            <h1>Set an Appointment</h1>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>
               <br/>
@@ -89,7 +88,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
               <br/>
-              <input id='time' type='time' min='06:00:00' max='21:00:00' name='time' value={time} onChange={this.handleChange} />
+              <input id='time' type='time' min='08:00:00' max='20:00:00' name='time' value={time} onChange={this.handleChange} />
               <br/>
               <label htmlFor='message'>Message:</label>
               <br/>
@@ -103,6 +102,7 @@ class AppointmentForm extends Component {
           :
           <div className='appointmentForm'>
             <h1>Set an Appointment</h1>
+            <p>We'll send you an email confirmation. You may need to <u>check your spam folder</u>.</p>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>
               <br/>
@@ -132,7 +132,7 @@ class AppointmentForm extends Component {
               <br/>
               <label htmlFor='time' style={{fontSize: 15}}>Time</label>
               <br/>
-              <input id='time' type='time' min='06:00:00' max='21:00:00' name='time' value={time} onChange={this.handleChange} required/>
+              <input id='time' type='time' min='08:00:00' max='20:00:00' name='time' value={time} onChange={this.handleChange} required/>
               <br/>
               <label htmlFor='message'>Message:</label>
               <br/>
