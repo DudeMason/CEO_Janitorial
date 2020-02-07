@@ -9,25 +9,44 @@ class AppointmentSenderMailer < ApplicationMailer
 
 		email = params[:email]
 
-		puts email
-
-		from = Email.new(email: 'mason.deyre@gmail.com')
-		to = Email.new(email: "mason.deyre@gmail.com")
-		subject = 'CEO Appointment'
+		from = Email.new(email: 'ceojanitorial@gmail.com')
+		to = Email.new(email: "#{email}")
+		subject = 'Appointment Submitted!'
 		content = Content.new(type: 'text/html', value:
 			"<html>
 				<body>
-					<div>
-						Appointment has been set!
-						#{params[:first_name]}
-					</div>
+					<h2>Your appointment has been submitted.</h2>
+					<h3>Please be aware that they may contact you to reschedule if there are any scheduling conflicts.</h3>
+					<ul>
+						<li>
+							Name: #{params[:first_name]} #{params[:last_name]}
+						</li>
+						<li>
+							Phone: #{params[:phone1]}-#{params[:phone2]}-#{params[:phone3]}
+						</li>
+						<li>
+							Company: #{params[:company]}
+						</li>
+						<li>
+							Date: #{Date.parse(params[:date]).strftime("%m/%d/%Y")}
+						</li>
+						<li>
+							Time: #{params[:time]}
+						</li>
+						<p>
+							Your message:
+							<br/>
+							'#{params[:message]}'
+						</p>
+					</ul>
+					<h3>Thank you for contacting CEO Janitorial!</h3>
 				</body>
 			</html>"
 		)
 		mail = Mail.new(from, subject, to, content)
+
 		sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
 		response = sg.client.mail._('send').post(request_body: mail.to_json)
-
 		puts response.status_code
 		puts response.body
 		puts response.headers
