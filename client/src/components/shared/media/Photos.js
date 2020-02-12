@@ -1,21 +1,9 @@
 import React, { useState, useCallback } from "react";
 import ImageViewer from "react-simple-image-viewer";
-import Ladder from './images/Ladder.png';
-import Elementary from './images/Elementary.png';
-import ExtendoBrush from './images/ExtendoBrush.png';
 import Shiny from './images/Shiny.png';
 import Floor from './images/Floor.png';
-import Bucket from './images/Bucket.png';
-import Window from './images/Window.png';
-import Windoow from './images/Windoow.png';
-import High from './images/High.png';
 import Fan from './images/Fan.png';
 import Door from './images/Door.png';
-import Squeak from './images/Squeak.png';
-import Showerhead from './images/Showerhead.png';
-import Hall from './images/Hall.png';
-import Squeeak from './images/Squeeak.png';
-import Win from './images/Win.png';
 import Vac from './images/Vac.png';
 import Before1 from './images/Before1.png';
 import Before2 from './images/Before2.png';
@@ -38,6 +26,16 @@ import VacBack from './images/VacBack.png';
 import VacClose from './images/VacClose.png';
 import VacNice from './images/VacNice.png';
 import Vacuum from './images/Vacuum.png';
+import BackVac from './images/BackVac.jpg';
+import Fountain from './images/Fountain.jpg';
+import Fountains from './images/Fountains.jpg';
+import LongVac from './images/LongVac.jpg';
+import Mirror from './images/Mirror.jpg';
+import MirrorLong from './images/MirrorLong.jpg';
+import WallDust from './images/WallDust.jpg';
+import WallDust1 from './images/WallDust1.jpg';
+import WallDust2 from './images/WallDust2.jpg';
+import WallDust3 from './images/WallDust3.jpg';
 
 function Photos() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -49,12 +47,12 @@ function Photos() {
   const images = [
     Door, UniClean, Duster, Uni, VacBack, VacClose, VacNice, Vacuum,
     Nice1,  Nice3, Nice5, Shiny, Floor, Before1, Before2, During1, During2,
-    After1, Ladder, Squeak, Squeeak, Win, High, Hall, Elementary,
-    ExtendoBrush, Bucket, Window, Windoow, Showerhead, Duriing,
+    After1, BackVac, LongVac, Mirror, MirrorLong, WallDust, WallDust1,
+    WallDust2, WallDust3, Fountain, Duriing,
   ];
 
   const shortImages = [
-    Befoore, Afteer,
+    Fountains, Befoore, Afteer,
     Fan, Vac, Clean, Nice2, Nice4,
   ];
 
