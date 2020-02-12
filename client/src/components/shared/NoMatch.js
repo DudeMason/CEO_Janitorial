@@ -19,7 +19,7 @@ const NoMatch = () => (
         mason.deyre@gmail.com
       </a>
       <br/>
-      <a href='http://www.masoneyre.com' target='_blank' rel='noopener noreferrer'>
+      <a href='https://www.masoneyre.com' target='_blank' rel='noopener noreferrer'>
         www.masoneyre.com
       </a>
     </p>
