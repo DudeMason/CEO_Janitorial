@@ -26,16 +26,16 @@ import VacBack from './images/VacBack.png';
 import VacClose from './images/VacClose.png';
 import VacNice from './images/VacNice.png';
 import Vacuum from './images/Vacuum.png';
-import BackVac from './images/BackVac.jpg';
-import Fountain from './images/Fountain.jpg';
-import Fountains from './images/Fountains.jpg';
-import LongVac from './images/LongVac.jpg';
-import Mirror from './images/Mirror.jpg';
-import MirrorLong from './images/MirrorLong.jpg';
-import WallDust from './images/WallDust.jpg';
-import WallDust1 from './images/WallDust1.jpg';
-import WallDust2 from './images/WallDust2.jpg';
-import WallDust3 from './images/WallDust3.jpg';
+import BackVac from './images/BackVac.png';
+import Fountain from './images/Fountain.png';
+import Fountains from './images/Fountains.png';
+import LongVac from './images/LongVac.png';
+import Mirror from './images/Mirror.png';
+import MirrorLong from './images/MirrorLong.png';
+import WallDust from './images/WallDust.png';
+import WallDust1 from './images/WallDust1.png';
+import WallDust2 from './images/WallDust2.png';
+import WallDust3 from './images/WallDust3.png';
 
 function Photos() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -48,7 +48,7 @@ function Photos() {
     Door, UniClean, Duster, Uni, VacBack, VacClose, VacNice, Vacuum,
     Nice1,  Nice3, Nice5, Shiny, Floor, Before1, Before2, During1, During2,
     After1, BackVac, LongVac, Mirror, MirrorLong, WallDust, WallDust1,
-    WallDust2, WallDust3, Fountain, Duriing,
+    WallDust2, WallDust3, Duriing, Fountain
   ];
 
   const shortImages = [
@@ -110,7 +110,8 @@ function Photos() {
         </a>
       </p>
 
-      {isViewerOpen && (
+      { images.push.apply(images, shortImages),
+        isViewerOpen && (
         <ImageViewer
           src={images}
           currentIndex={currentImage}
@@ -120,7 +121,8 @@ function Photos() {
           }}
         />
       )}
-      {isShortViewerOpen && (
+      { shortImages.push.apply(shortImages, images),
+        isShortViewerOpen && (
         <ImageViewer
           src={shortImages}
           currentIndex={currentShortImage}
