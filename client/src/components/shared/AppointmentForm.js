@@ -54,7 +54,7 @@ class AppointmentForm extends Component {
   render() {
     const{ first_name, last_name, email, phone1, phone2, phone3, company, date, time, message } = this.state
     return(
-      <div style={{height: '100vh'}}>
+      <div>
         {
           this.props.edit
           ?
