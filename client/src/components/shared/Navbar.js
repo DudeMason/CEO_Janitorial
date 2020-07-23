@@ -44,6 +44,12 @@ class Navbar extends React.Component {
             </Menu.Item>
           </Link>
 
+          <Link to='/services'>
+            <Menu.Item>
+              Services
+            </Menu.Item>
+          </Link>
+
           <Link to='/contact'>
             <Menu.Item>
               <Icon name='phone'/>
