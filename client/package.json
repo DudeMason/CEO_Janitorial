@@ -15,7 +15,7 @@
     "react-simple-image-viewer": "^0.0.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
-    "serialize-javascript": "^2.1.2"
+    "serialize-javascript": "^3.1.0"
   },
   "proxy": "http://localhost:3001",
   "scripts": {
