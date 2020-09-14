@@ -111,27 +111,23 @@ function Photos() {
       </p>
 
       { images.push.apply(images, shortImages),
-        isViewerOpen && (
-        <ImageViewer
-          src={images}
-          currentIndex={currentImage}
-          onClose={closeImageViewer}
-          backgroundStyle={{
-            backgroundColor: "rgba(0,0,0,0.9)"
-          }}
-        />
-      )}
+        isViewerOpen &&
+        (<ImageViewer
+            src={images}
+            currentIndex={currentImage}
+            onClose={closeImageViewer}
+            backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
+        />)
+      }
       { shortImages.push.apply(shortImages, images),
-        isShortViewerOpen && (
-        <ImageViewer
-          src={shortImages}
-          currentIndex={currentShortImage}
-          onClose={closeShortImageViewer}
-          backgroundStyle={{
-            backgroundColor: "rgba(0,0,0,0.9)"
-          }}
-        />
-      )}
+        isShortViewerOpen &&
+        (<ImageViewer
+            src={shortImages}
+            currentIndex={currentShortImage}
+            onClose={closeShortImageViewer}
+            backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
+        />)
+      }
     </div>
   );
 }

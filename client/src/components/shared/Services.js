@@ -19,12 +19,12 @@ const Services = () => (
           We use state-of-the-art disinfection technology to ensure a safe and
           healthy environment for you and your clients!
         </p>
-        <img src={Ponytail} width="40%" style={{margin: 5}}/>
-        <img src={Hat} width="40%" style={{margin: 5}}/>
-        <img src={Dusty} width="40%" style={{margin: 5}}/>
-        <img src={Mask} width="40%" style={{margin: 5}}/>
+        <img src={Ponytail} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
+        <img src={Hat} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
+        <img src={Dusty} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
+        <img src={Mask} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
         <br/>
-        <img src={Tube} width="81%" style={{margin: 5}}/>
+        <img src={Tube} width="81%" style={{margin: 5}} alt='Fogging disinfector'/>
         <br/>
         <video width="40%" controls style={{margin: 5}}>
           <source src={Ceo}/>

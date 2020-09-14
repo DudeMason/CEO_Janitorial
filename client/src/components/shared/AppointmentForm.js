@@ -102,8 +102,11 @@ class AppointmentForm extends Component {
           :
           <div className='appointmentForm'>
             <h1>Set an Appointment</h1>
-            <p>We'll send you an email confirmation. You may need to <u>check your spam folder</u>.</p>
-            <p>We are a Utah company and are unable to accomodate appointments outside of Utah.</p>
+            <p>
+              We'll send you an email confirmation. You may need to <u>check your spam folder</u>.
+              <br/>
+              We are a Utah company and cannot accomodate appointments outside of Utah.
+            </p>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>
               <br/>
