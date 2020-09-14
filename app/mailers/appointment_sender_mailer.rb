@@ -8,12 +8,10 @@ class AppointmentSenderMailer < ApplicationMailer
 	def send_appointment(params)
 
 		clientEmail = Email.new(email: "#{params[:email]}")
-
 		ceoEmail = Email.new(email: 'ceojanitorial@gmail.com')
 
 		from = ceoEmail
 		to = clientEmail
-		cc = ceoEmail
 		subject = 'Appointment Submitted'
 		content = Content.new(type: 'text/html', value:
 			"<html>
