@@ -1,23 +1,21 @@
-class AppointmentSenderMailer < ApplicationMailer
+class NotificationSenderMailer < ApplicationMailer
 
 	# using SendGrid's Ruby Library
 	# https://github.com/sendgrid/sendgrid-ruby
 	require 'sendgrid-ruby'
 	include SendGrid
 
-	def send_appointment(params)
+	def send_notification(params)
 		ceoEmail = 	  Email.new(email: 'ceojanitorial@gmail.com')
-		clientEmail = Email.new(email: "#{params[:email]}")
 
 		from = 		ceoEmail
-		to = 		clientEmail
-		subject = 	'Appointment Submitted'
+		to = 		ceoEmail
+		subject = 	'New Appointment Submitted'
 		content = 	Content.new(
 			type: 'text/html', 
 			value: "<html>
 						<body>
-							<h2>Your appointment has been submitted.</h2>
-							<h3>Please be aware that they may contact you to reschedule if there are any scheduling conflicts.</h3>
+							<h2>A client has submitted an appointment.</h2>
 							<ul>
 								<li>
 									Name: #{params[:first_name]} #{params[:last_name]}
@@ -35,12 +33,11 @@ class AppointmentSenderMailer < ApplicationMailer
 									Time: #{params[:time]}
 								</li>
 								<p>
-									Your message:
+									Their message:
 									<br/>
 									\"#{params[:message]}\"
 								</p>
 							</ul>
-							<h3>Thank you for choosing CEO Janitorial!</h3>
 						</body>
 					</html>"
 		)
