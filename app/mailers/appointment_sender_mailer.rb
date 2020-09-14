@@ -10,7 +10,6 @@ class AppointmentSenderMailer < ApplicationMailer
 
 		from = 	ceoEmail
 		to = 		Email.new(email: "#{params[:email]}")
-		bcc = 	ceoEmail
 		subject = 'Appointment Submitted'
 		content = Content.new(type: 'text/html', value:
 			"<html>
@@ -43,7 +42,7 @@ class AppointmentSenderMailer < ApplicationMailer
 				</body>
 			</html>"
 		)
-		mail = Mail.new(from, to, bcc, subject, content)
+		mail = Mail.new(from, subject, to, content)
 
 		sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
 		response = sg.client.mail._('send').post(request_body: mail.to_json)
