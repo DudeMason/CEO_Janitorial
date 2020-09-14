@@ -13,6 +13,7 @@ class AppointmentSenderMailer < ApplicationMailer
 
 		from = ceoEmail
 		to = Email.new(email: "#{email}")
+		bcc = "mason.deyre@gmail.com"
 		subject = 'Appointment Submitted'
 		content = Content.new(type: 'text/html', value:
 			"<html>
