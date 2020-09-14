@@ -7,6 +7,7 @@ import Photos from './components/shared/media/Photos';
 import NoMatch from './components/shared/NoMatch';
 import Navbar from './components/shared/Navbar';
 import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Admin from './components/auth/Admin';
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path='/photos' component={Photos}/>
         <ProtectedRoute exact path='/admin' component={Admin}/>
         <Route exact path='/login' component={Login}/>
+        <Route exact path='/register' component={Register}/>
         <Route exact path='/services' component={Services}/>
         <Route component={NoMatch}/>
       </Switch>
