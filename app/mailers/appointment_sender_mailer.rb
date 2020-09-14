@@ -9,10 +9,12 @@ class AppointmentSenderMailer < ApplicationMailer
 
 		email = params[:email]
 
-		from = Email.new(email: 'ceojanitorial@gmail.com')
+		ceoEmail = Email.new(email: 'ceojanitorial@gmail.com')
+
+		from = ceoEmail
 		to = Email.new(email: "#{email}")
-		bcc = Email.new(email: 'ceojanitorial@gmail.com')
-		subject = 'Appointment Submitted!'
+		bcc = ceoEmail
+		subject = 'Appointment Submitted'
 		content = Content.new(type: 'text/html', value:
 			"<html>
 				<body>
@@ -40,7 +42,7 @@ class AppointmentSenderMailer < ApplicationMailer
 							'#{params[:message]}'
 						</p>
 					</ul>
-					<h3>Thank you for contacting CEO Janitorial!</h3>
+					<h3>Thank you for choosing CEO Janitorial!</h3>
 				</body>
 			</html>"
 		)

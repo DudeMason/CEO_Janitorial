@@ -16,7 +16,8 @@ gem 'puma', '~> 4.3'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise_token_auth'
-gem 'sendgrid-ruby', '~> 6.0', '>= 6.0.4'
+gem 'sendgrid-ruby', '~> 6.3', '>= 6.3.4'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
