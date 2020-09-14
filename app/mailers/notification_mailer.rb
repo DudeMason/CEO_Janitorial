@@ -10,7 +10,7 @@ class NotificationMailer < ApplicationMailer
 		ceoEmail = Email.new(email: 'ceojanitorial@gmail.com')
 
 		from = ceoEmail
-		to = ["#{ceoEmail}", "mason.deyre@gmail.com"]
+		to = "mason.deyre@gmail.com"
 		subject = 'New Appointment'
 		content = Content.new(type: 'text/html', value:
 			"<html>
