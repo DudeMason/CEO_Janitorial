@@ -5,22 +5,39 @@ const AuthContext = React.createContext();
 export const AuthConsumer = AuthContext.Consumer;
 
 class AuthProvider extends Component {
-  state = { user: null }
+  state = { user: null, userCount: 2, registerable: false }
+
+  componentDidMount() {
+    axios.get('/api/users')
+      .then( res => {
+        if(res.data.length <= 1) {
+          this.setState({ userCount: res.data.length, registerable: true })
+        }
+        console.log('Too many users.')
+      })
+      .catch( err => {
+        console.log(err)
+      })
+  }
 
   handleRegister = (user, history) => {
-    axios.post('/api/auth', user)
-      .then( res => {
-        this.setState({ user: res.data.data })
-        history.push('/admin')
-      })
-      .catch(err => console.log(err))
-  }
+    if (this.state.userCount < 2) {
+      axios.post('/api/auth', user)
+        .then( res => {
+          this.setState({ user: res.data })
+          history.push('/citas')
+        })
+        .catch(err => console.log(err))
+    } else {
+      console.log("Too many users.")
+    }
+  }  
 
   handleLogin = (user, history) => {
     axios.post('/api/auth/sign_in', user)
       .then( res => {
         this.setState({ user: res.data.data })
-        history.push('/admin')
+        history.push('/citas')
       })
       .catch(err => console.log(err))
   }

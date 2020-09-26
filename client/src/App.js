@@ -8,24 +8,63 @@ import NoMatch from './components/shared/NoMatch';
 import Navbar from './components/shared/Navbar';
 import FetchUser from './components/auth/FetchUser';
 import Admin from './components/auth/Admin';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import Services from './components/shared/Services';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import { AuthConsumer, } from "./providers/AuthProvider";
 
-const App = () => (
 
-  <div className='background'>
-    <Navbar />
-    <FetchUser>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/contact' component={Contact}/>
-        <Route exact path='/about' component={About}/>
-        <Route exact path='/photos' component={Photos}/>
-        <Route exact path='/manejarcitas' component={Admin}/>
-        <Route exact path='/services' component={Services}/>
-        <Route component={NoMatch}/>
-      </Switch>
-    </FetchUser>
-  </div>
+const App = ({registerable}) => (
+  <>
+    {
+      registerable
+      ?
+      <div className='background'>
+        <Navbar />
+        <FetchUser>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/contact' component={Contact}/>
+            <Route exact path='/about' component={About}/>
+            <Route exact path='/photos' component={Photos}/>
+            <ProtectedRoute exact path='/citas' component={Admin}/>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/register' component={Register}/>
+            <Route exact path='/services' component={Services}/>
+            <Route component={NoMatch}/>
+          </Switch>
+        </FetchUser>
+      </div>
+      :
+      <div className='background'>
+        <Navbar />
+        <FetchUser>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/contact' component={Contact}/>
+            <Route exact path='/about' component={About}/>
+            <Route exact path='/photos' component={Photos}/>
+            <ProtectedRoute exact path='/citas' component={Admin}/>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/services' component={Services}/>
+            <Route component={NoMatch}/>
+          </Switch>
+        </FetchUser>
+      </div>
+    }
+  </>
 )
 
-export default App;
+const ConnectedApp = () => {
+  return(
+    <AuthConsumer>
+    {
+      value => (
+        <App registerable={value.registerable} />
+      )
+    }
+    </AuthConsumer>
+  )
+}
+export default ConnectedApp;
