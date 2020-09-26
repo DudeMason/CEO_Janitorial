@@ -17,7 +17,7 @@ class AppointmentSenderMailer < ApplicationMailer
 			value: "<html>
 						<body>
 							<h2>Your appointment has been submitted.</h2>
-							<h3>Please be aware that they may contact you to reschedule if there are any scheduling conflicts.</h3>
+							<h3>Please be aware that we may need to reschedule if there are any scheduling conflicts.</h3>
 							<ul>
 								<br>
 									<u>Name</u>: #{params[:first_name]} #{params[:last_name]}
