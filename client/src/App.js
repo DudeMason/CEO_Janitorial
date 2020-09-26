@@ -16,44 +16,22 @@ import { AuthConsumer, } from "./providers/AuthProvider";
 
 
 const App = ({registerable}) => (
-  <>
-    {
-      registerable
-      ?
-      <div className='background'>
-        <Navbar />
-        <FetchUser>
-          <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/contact' component={Contact}/>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/photos' component={Photos}/>
-            <ProtectedRoute exact path='/citas' component={Admin}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/register' component={Register}/>
-            <Route exact path='/services' component={Services}/>
-            <Route component={NoMatch}/>
-          </Switch>
-        </FetchUser>
-      </div>
-      :
-      <div className='background'>
-        <Navbar />
-        <FetchUser>
-          <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/contact' component={Contact}/>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/photos' component={Photos}/>
-            <ProtectedRoute exact path='/citas' component={Admin}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/services' component={Services}/>
-            <Route component={NoMatch}/>
-          </Switch>
-        </FetchUser>
-      </div>
-    }
-  </>
+  <div className='background'>
+    <Navbar />
+    <FetchUser>
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/contact' component={Contact}/>
+        <Route exact path='/about' component={About}/>
+        <Route exact path='/photos' component={Photos}/>
+        <ProtectedRoute exact path='/citas' component={Admin}/>
+        <Route exact path='/login' component={Login}/>
+        {registerable ? <Route exact path='/register' component={Register}/> : null}
+        <Route exact path='/services' component={Services}/>
+        <Route component={NoMatch}/>
+      </Switch>
+    </FetchUser>
+  </div>
 )
 
 const ConnectedApp = () => {
