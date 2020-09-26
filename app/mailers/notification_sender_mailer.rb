@@ -6,9 +6,10 @@ class NotificationSenderMailer < ApplicationMailer
 	include SendGrid
 
 	def send_notification(params)
+		appEmail = 	  Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
 		ceoEmail = 	  Email.new(email: 'ceojanitorial@gmail.com')
 
-		from = 		ceoEmail
+		from = 		appEmail
 		to = 		ceoEmail
 		subject = 	'New Appointment Submitted'
 		content = 	Content.new(
@@ -17,21 +18,21 @@ class NotificationSenderMailer < ApplicationMailer
 						<body>
 							<h2>A client has submitted an appointment.</h2>
 							<ul>
-								<li>
-									Name: #{params[:first_name]} #{params[:last_name]}
-								</li>
-								<li>
-									Phone: #{params[:phone1]}-#{params[:phone2]}-#{params[:phone3]}
-								</li>
-								<li>
-									Company: #{params[:company]}
-								</li>
-								<li>
-									Date: #{Date.parse(params[:date]).strftime("%m/%d/%Y")}
-								</li>
-								<li>
-									Time: #{params[:time]}
-								</li>
+								<br>
+									<u>Name</u>: #{params[:first_name]} #{params[:last_name]}
+								</br>
+								<br>
+									<u>Phone</u>: #{params[:phone1]}-#{params[:phone2]}-#{params[:phone3]}
+								</br>
+								<br>
+									<u>Date</u>: #{Date.parse(params[:date]).strftime("%m/%d/%Y")}
+								</br>
+								<br>
+									<u>Time</u>: #{params[:time]}
+								</br>
+								<br>
+									<u>Company</u>: #{params[:company]}
+								</br>
 								<p>
 									Their message:
 									<br/>
