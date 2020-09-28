@@ -3,8 +3,8 @@ import { Segment, Grid, Button, Icon } from 'semantic-ui-react';
 import AppointmentForm from './AppointmentForm';
 
 function Appointment({
-  appoint, id, first_name, last_name, phone1, phone2, phone3, company, email, date, time, message,
-  appoint: {editAppoint, removeAppoint, appointments}
+  id, first_name, last_name, phone1, phone2, phone3, company, email, date, time, message,
+  functions: {editAppoint, removeAppoint}
 }) {
 
   const [edit, toggleEdit] = useState(false)
