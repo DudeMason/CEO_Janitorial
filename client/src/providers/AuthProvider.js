@@ -13,7 +13,7 @@ class AuthProvider extends Component {
         if(res.data.length <= 1) {
           this.setState({ userCount: res.data.length, registerable: true })
         }
-        console.log('Too many users.')
+        console.log('Max users')
       })
       .catch( err => {
         console.log(err)
