@@ -8,18 +8,15 @@ class Navbar extends React.Component {
   rightNavItems = () => {
     const { auth: { user, handleLogout } } = this.props;
 
-  if (user) {
+    if (user) {
       return (
         <Menu position='right'>
           <Link to='/citas'>
-            <Menu.Item
-              name='appointments'
-            />
+            <Menu.Item name='appointments'>
+            </Menu.Item>
           </Link>
-          <Menu.Item
-            name='logout'
-            onClick={ () => handleLogout(this.props.history) }
-          />
+          <Menu.Item name='logout' onClick={() => handleLogout(this.props.history)}>
+          </Menu.Item>
         </Menu>
       )
     }
