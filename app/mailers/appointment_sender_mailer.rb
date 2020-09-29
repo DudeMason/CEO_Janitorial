@@ -6,11 +6,11 @@ class AppointmentSenderMailer < ApplicationMailer
 	include SendGrid
 
 	def send_appointment(params)
-		ceoEmail = 	  Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
-		clientEmail = Email.new(email: "#{params[:email]}")
+		ceo_email = 	  Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
+		client_email = Email.new(email: "#{params[:email]}")
 
-		from = 		ceoEmail
-		to = 		clientEmail
+		from = 		ceo_email
+		to = 		client_email
 		subject = 	'Appointment Submitted'
 		content = 	Content.new(
 			type: 'text/html', 

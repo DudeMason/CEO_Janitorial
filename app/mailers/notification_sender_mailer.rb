@@ -6,11 +6,11 @@ class NotificationSenderMailer < ApplicationMailer
 	include SendGrid
 
 	def send_notification(params)
-		appEmail = 	  Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
-		ceoEmail = 	  Email.new(email: 'ceojanitorial@gmail.com')
+		app_email = 	  Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
+		ceo_email = 	  Email.new(email: 'mason.deyre@gmail.com')
 
-		from = 		appEmail
-		to = 		ceoEmail
+		from = 		app_email
+		to = 		ceo_email
 		subject = 	'New Appointment Submitted'
 		content = 	Content.new(
 			type: 'text/html', 

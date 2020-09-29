@@ -110,8 +110,8 @@ function Photos() {
         </a>
       </p>
 
-      { images.push.apply(images, shortImages),
-        isViewerOpen &&
+      { images.push.apply(images, shortImages) },
+      { isViewerOpen &&
         (<ImageViewer
             src={images}
             currentIndex={currentImage}
@@ -119,8 +119,8 @@ function Photos() {
             backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
         />)
       }
-      { shortImages.push.apply(shortImages, images),
-        isShortViewerOpen &&
+      { shortImages.push.apply(shortImages, images) },
+      { isShortViewerOpen &&
         (<ImageViewer
             src={shortImages}
             currentIndex={currentShortImage}

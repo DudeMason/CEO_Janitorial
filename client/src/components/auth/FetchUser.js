@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { AuthConsumer, } from "../../providers/AuthProvider";
+import {AuthConsumer,} from "../../providers/AuthProvider";
 
 class FetchUser extends React.Component {
   state = { loaded: false, };
 
   componentDidMount() {
-    const { auth: { authenticated, setUser, }, } = this.props;
+    const { authenticated, setUser } = this.props.auth;
 
     if (authenticated) {
       this.loaded();
@@ -27,8 +27,7 @@ class FetchUser extends React.Component {
   }
 
   checkLocalToken = () => {
-    const token = localStorage.getItem('access-token');
-    return token;
+    return localStorage.getItem('access-token');
   }
 
   loaded = () => this.setState({ loaded: true, });

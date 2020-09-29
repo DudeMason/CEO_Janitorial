@@ -16,7 +16,7 @@ const Contact = () => (
         </Grid.Column>
       </Grid>
     </div>
-    <div className='watermarkZindex'>
+    <div className='watermarkZIndex'>
       <p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
         © 2020 Website Created by Mason D Eyre
         <br/>

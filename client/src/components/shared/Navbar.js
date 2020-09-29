@@ -6,7 +6,7 @@ import { AuthConsumer, } from "../../providers/AuthProvider";
 class Navbar extends React.Component {
 
   rightNavItems = () => {
-    const { auth: { user, handleLogout } } = this.props;
+    const { user, handleLogout } = this.props.auth;
 
     if (user) {
       return (

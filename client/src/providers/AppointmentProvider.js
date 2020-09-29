@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-const AppointmentContext = React.createContext();
+const AppointmentContext = React.createContext(undefined, undefined);
 export const AppointmentConsumer = AppointmentContext.Consumer;
 
 export default class AppointmentProvider extends Component {
@@ -27,7 +27,7 @@ export default class AppointmentProvider extends Component {
 
   removeAppoint = (id) => {
     axios.delete(`/api/appointments/${id}`)
-      .then(res => {
+      .then( () => {
         const {appointments} = this.state
         this.setState({ appointments: appointments.filter( a => a.id !==id ) })
       })

@@ -9,7 +9,7 @@ function Appointment({
 
   const [edit, toggleEdit] = useState(false)
   let appDate = new Date(`${date}`);
-  let realDate = parseInt(appDate.getUTCMonth()+1) +"/"+ appDate.getUTCDate() +"/"+ appDate.getUTCFullYear();
+  let realDate = (appDate.getUTCMonth() + 1) +"/"+ appDate.getUTCDate() +"/"+ appDate.getUTCFullYear();
 
   return(
     <>

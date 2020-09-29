@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext(undefined, undefined);
 export const AuthConsumer = AuthContext.Consumer;
 
 class AuthProvider extends Component {
@@ -44,7 +44,7 @@ class AuthProvider extends Component {
 
   handleLogout = (history) => {
     axios.delete('/api/auth/sign_out')
-      .then( res => {
+      .then( () => {
         this.setState({ user: null })
         history.push('/login')
       })
