@@ -20,7 +20,7 @@ class AppointmentForm extends Component {
      })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = () => {
     if (this.props.id) {
       this.props.editAppoint( this.props.id, this.state )
       this.props.toggleEdit(!this.props.edit)
@@ -105,7 +105,7 @@ class AppointmentForm extends Component {
             <p>
               We'll send you an email confirmation. You may need to <u>check your spam folder</u>.
               <br/>
-              We are a Utah company and cannot accomodate appointments outside of Utah.
+              We are a Utah company and cannot accommodate appointments outside of Utah.
             </p>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='firstName' style={{fontSize: 15}}>Name</label>

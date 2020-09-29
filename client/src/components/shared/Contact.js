@@ -12,7 +12,7 @@ const Contact = () => (
           <AppointmentForm />
         </Grid.Column>
         <Grid.Column>
-          <img src={Ceo} className='bizCard' width='95%' alt='801-510-8656 -- ceojanitorial@gmail.com'></img>
+          <img src={Ceo} className='bizCard' width='95%' alt='801-510-8656 -- ceojanitorial@gmail.com'/>
         </Grid.Column>
       </Grid>
     </div>
