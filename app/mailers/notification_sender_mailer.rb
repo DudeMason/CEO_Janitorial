@@ -1,20 +1,20 @@
 class NotificationSenderMailer < ApplicationMailer
 
-	# using SendGrid's Ruby Library
-	# https://github.com/sendgrid/sendgrid-ruby
-	require 'sendgrid-ruby'
-	include SendGrid
+  # using SendGrid's Ruby Library
+  # https://github.com/sendgrid/sendgrid-ruby
+  require 'sendgrid-ruby'
+  include SendGrid
 
-	def send_notification(params)
-		app_email = 	  Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
-		ceo_email = 	  Email.new(email: 'mason.deyre@gmail.com')
+  def send_notification(params)
+    app_email = Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
+    ceo_email = Email.new(email: 'ceojanitorial@gmail.com')
 
-		from = 		app_email
-		to = 		ceo_email
-		subject = 	'New Appointment Submitted'
-		content = 	Content.new(
-			type: 'text/html', 
-			value: "<html>
+    from = app_email
+    to = ceo_email
+    subject = 'New Appointment Submitted'
+    content = Content.new(
+        type: 'text/html',
+        value: "<html>
 						<body>
 							<h2>A client has submitted an appointment.</h2>
 							<ul>
@@ -41,13 +41,13 @@ class NotificationSenderMailer < ApplicationMailer
 							</ul>
 						</body>
 					</html>"
-		)
-		mail = Mail.new(from, subject, to, content)
+    )
+    mail = Mail.new(from, subject, to, content)
 
-		sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-		response = sg.client.mail._('send').post(request_body: mail.to_json)
-		puts response.status_code
-		puts response.body
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
 
-	end
+  end
 end

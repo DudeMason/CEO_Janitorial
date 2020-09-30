@@ -1,20 +1,20 @@
 class AppointmentSenderMailer < ApplicationMailer
 
-	# using SendGrid's Ruby Library
-	# https://github.com/sendgrid/sendgrid-ruby
-	require 'sendgrid-ruby'
-	include SendGrid
+  # using SendGrid's Ruby Library
+  # https://github.com/sendgrid/sendgrid-ruby
+  require 'sendgrid-ruby'
+  include SendGrid
 
-	def send_appointment(params)
-		ceo_email = 	  Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
-		client_email = Email.new(email: "#{params[:email]}")
+  def send_appointment(params)
+    ceo_email = Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
+    client_email = Email.new(email: "#{params[:email]}")
 
-		from = 		ceo_email
-		to = 		client_email
-		subject = 	'Appointment Submitted'
-		content = 	Content.new(
-			type: 'text/html', 
-			value: "<html>
+    from = ceo_email
+    to = client_email
+    subject = 'Appointment Submitted'
+    content = Content.new(
+        type: 'text/html',
+        value: "<html>
 						<body>
 							<h2>Your appointment has been submitted.</h2>
 							<h3>Please be aware that we may need to reschedule if there are any scheduling conflicts.</h3>
@@ -43,13 +43,13 @@ class AppointmentSenderMailer < ApplicationMailer
 							<h3>Thank you for choosing CEO Janitorial!</h3>
 						</body>
 					</html>"
-		)
-		mail = Mail.new(from, subject, to, content)
+    )
+    mail = Mail.new(from, subject, to, content)
 
-		sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-		response = sg.client.mail._('send').post(request_body: mail.to_json)
-		puts response.status_code
-		puts response.body
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
 
-	end
+  end
 end

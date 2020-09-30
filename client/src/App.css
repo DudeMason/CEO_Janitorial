@@ -1,90 +1,94 @@
 .background {
-  background-image: url('./components/shared/media/images/Background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: calc(100vh);
-  overflow-y: auto;
+    background-image: url('./components/shared/media/images/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh);
+    overflow-y: auto;
 }
 
 .background a {
-  color: navy;
-  opacity: inherit;
+    color: navy;
+    opacity: inherit;
 }
 
 p {
-  font-size: 13pt;
+    font-size: 13pt;
 }
 
 .grid {
-  justify-content: center;
+    justify-content: center;
 }
 
 .phoneNumber {
-  width: 45px;
-  font-size: 12pt;
+    width: 45px;
+    font-size: 12pt;
 }
+
 .phoneNumbers {
-  width: 60px;
-  font-size: 12pt;
+    width: 60px;
+    font-size: 12pt;
 }
 
 .bizCard {
-  margin: auto;
-  display: block;
-  opacity: .95;
+    margin: auto;
+    display: block;
+    opacity: .95;
 }
 
 .appointmentForm input[type=text], [type=textarea] {
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 8px;
-  margin-bottom: 11px;
-  width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 11px;
+    width: 100%;
 }
+
 .appointmentForm input[type=submit] {
-  width: 100px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
 .appointmentForm input[type=date], [type=time] {
-  width: 170px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 5px;
-  outline: none;
-  margin-bottom: 11px;
+    width: 170px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 5px;
+    outline: none;
+    margin-bottom: 11px;
 }
+
 .appointmentForm input[type=tel] {
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 8px;
-  margin-bottom: 11px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 11px;
 }
 
 .appointmentForm {
-  background-color: #f9f9f9;
-  opacity: .95;
-  padding: 20px 20px 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+    background-color: #f9f9f9;
+    opacity: .95;
+    padding: 20px 20px 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .leaders img {
-  margin: 10px;
+    margin: 10px;
 }
 
 .watermarkZIndex {
-  margin-top: 175px;
+    margin-top: 175px;
 }
