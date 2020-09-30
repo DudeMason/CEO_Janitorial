@@ -7,7 +7,7 @@ class NotificationSenderMailer < ApplicationMailer
 
 	def send_notification(params)
 		app_email = Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
-		ceo_email = Email.new(email: 'mason.deyre@gmail.com')
+		ceo_email = Email.new(email: 'ceojanitorial@gmail.com')
 
 		from    = app_email
 		to      = ceo_email
