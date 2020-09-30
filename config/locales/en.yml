@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  html_body_h2_your_appointment_has_been_submitted_h: "<html> <body> <h2>Your appointment has been submitted.</h2> <h3>Please be aware that we may need to reschedule if there are any scheduling conflicts.</h3> <ul> <br> <u>Name</u>: %{params} %{params2} </br> <br> <u>Phone</u>: %{params3}-%{params4}-%{params5} </br> <br> <u>Date</u>: %{var} </br> <br> <u>Time</u>: %{params6} </br> <br> <u>Company</u>: %{params7} </br> <p> Your message: <br/> \"%{params8}\" </p> </ul> <h3>Thank you for choosing CEO Janitorial!</h3> </body> </html>"
+  html_body_h2_a_client_has_submitted_an_appointment: "<html> <body> <h2>A client has submitted an appointment.</h2> <ul> <br> <u>Name</u>: %{params} %{params2} </br> <br> <u>Phone</u>: %{params3}-%{params4}-%{params5} </br> <br> <u>Date</u>: %{var} </br> <br> <u>Time</u>: %{params6} </br> <br> <u>Company</u>: %{params7} </br> <p> Their message: <br/> \"%{params8}\" </p> </ul> </body> </html>"

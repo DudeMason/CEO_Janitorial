@@ -44,29 +44,29 @@ function Appointment({
 					<Grid.Column>
 						<Segment align='left'>
 							<u>Name</u>:
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{first_name} {last_name}
 							<br/>
 							<u>Phone</u>:
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{phone1} - {phone2} - {phone3}
 							<br/>
 							<u>Email</u>:
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{email}
 							<br/>
-							<u>Company</u>:&nbsp;
+							<u>Company</u>:&nbsp;&nbsp;&nbsp;
 							{company}
 							<br/>
 							<u>Date</u>:
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{realDate}
 							<br/>
 							<u>Time</u>:
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{time}
 							<br/>
-							<u>Message</u>:&nbsp;&nbsp;&nbsp;
+							<u>Message</u>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							{message}
 							<br/>
 							<br/>
