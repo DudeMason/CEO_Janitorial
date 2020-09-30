@@ -5,31 +5,34 @@ const AuthContext = React.createContext(undefined, undefined);
 export const AuthConsumer = AuthContext.Consumer;
 
 class AuthProvider extends Component {
-  state = { user: null, userCount: 2, registerable: false }
+  state = { user: null, canRegister: false }
 
   componentDidMount() {
     axios.get('/api/users')
       .then( res => {
         if(res.data.length <= 1) {
-          this.setState({ userCount: res.data.length, registerable: true })
+            this.setState({ canRegister: true })
+        } else {
+            this.setState({ canRegister: false })
+            console.log('Max users')
         }
-        console.log('Max users')
       })
       .catch( err => {
-        console.log(err)
+          console.log(err)
       })
   }
 
   handleRegister = (user, history) => {
-    if (this.state.userCount < 2) {
+    if (this.state.canRegister) {
       axios.post('/api/auth', user)
         .then( res => {
-          this.setState({ user: res.data })
-          history.push('/citas')
+            this.setState({ user: res.data })
+            this.componentDidMount()
+            history.push('/citas')
         })
         .catch(err => console.log(err))
     } else {
-      console.log("Too many users.")
+        console.log("Too many users.")
     }
   }  
 

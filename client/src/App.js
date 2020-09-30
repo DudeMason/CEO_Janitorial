@@ -15,7 +15,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import { AuthConsumer, } from "./providers/AuthProvider";
 
 
-const App = ({registerable}) => (
+const App = ({canRegister}) => (
   <div className='background'>
     <Navbar />
     <FetchUser>
@@ -26,7 +26,7 @@ const App = ({registerable}) => (
         <Route exact path='/photos' component={Photos}/>
         <ProtectedRoute exact path='/citas' component={Admin}/>
         <Route exact path='/login' component={Login}/>
-        {registerable ? <Route exact path='/register' component={Register}/> : null}
+        {canRegister ? <Route exact path='/register' component={Register}/> : null}
         <Route exact path='/services' component={Services}/>
         <Route component={NoMatch}/>
       </Switch>
@@ -39,7 +39,7 @@ const ConnectedApp = () => {
     <AuthConsumer>
     {
       value => (
-        <App registerable={value.registerable} />
+        <App canRegister={value.canRegister} />
       )
     }
     </AuthConsumer>

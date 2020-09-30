@@ -5,12 +5,12 @@ const NoMatch = () => (
 
   <div align='center' style={{height: '100vh'}}>
     <Segment compact align='center' style={{padding: 100}}>
-      <p>
         <h2>404 Error</h2>
-        This URL doesn't exist!
-        <br/>
-      </p>
-      <a href='/'><u>Return Home</u></a>
+        <p>
+            This URL doesn't exist!
+            <br/>
+        </p>
+        <a href='/'><u>Return Home</u></a>
     </Segment>
     <p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
       © 2020 Website Created by Mason D Eyre
