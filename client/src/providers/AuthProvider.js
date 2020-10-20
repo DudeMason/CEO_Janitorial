@@ -23,17 +23,23 @@ class AuthProvider extends Component {
 	}
 
 	handleRegister = (user, history) => {
-		if (this.state.canRegister) {
-			axios.post('/api/auth', user)
-			.then(res => {
-				this.setState({user: res.data})
-				this.componentDidMount()
-				history.push('/citas')
-			})
-			.catch(err => console.log(err))
-		} else {
-			console.log("Too many users.")
-		}
+		axios.get('/api/users')
+		.then(res => {
+			if (res.data.length <= 1) {
+				axios.post('/api/auth', user)
+				.then(result => {
+					this.setState({user: result.data})
+					this.componentDidMount()
+					history.push('/citas')
+				})
+				.catch(err => console.log(err))
+			} else {
+				alert("Too many users.")
+			}
+		})
+		.catch(err => {
+			console.log(err)
+		})
 	}
 
 	handleLogin = (user, history) => {

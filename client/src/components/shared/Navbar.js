@@ -11,10 +11,10 @@ class Navbar extends React.Component {
 		if (user) {
 			return (
 				<Menu position='right'>
-					<Link to='/citas'>
+					<a href={'/citas'}>
 						<Menu.Item name='appointments'>
 						</Menu.Item>
-					</Link>
+					</a>
 					<Menu.Item name='logout' onClick={() => handleLogout(this.props.history)}>
 					</Menu.Item>
 				</Menu>
