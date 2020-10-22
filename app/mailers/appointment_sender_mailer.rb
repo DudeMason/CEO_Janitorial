@@ -39,7 +39,7 @@ class AppointmentSenderMailer < ApplicationMailer
 
 		mail = JSON.parse(email.to_json)
 
-		# from_email    = Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
+		# from_email = Email.new(email: 'ceojanitorial@gmail.com', name: 'CEO Janitorial')
 		# to_email = Email.new(email: "#{params[:email]}")
 		#
 		# from    = from_email

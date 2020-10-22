@@ -14,7 +14,7 @@ class NotificationSenderMailer < ApplicationMailer
 				{
 					'to': [
 						{
-							'email': 'mason.deyre@gmail.com'
+							'email': 'ceojanitorial@gmail.com'
 						}
 					],
 					'subject': 'New Appointment Submitted'
@@ -39,11 +39,11 @@ class NotificationSenderMailer < ApplicationMailer
 
 		mail = JSON.parse(email.to_json)
 
-		# app_email = Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
-		# ceo_email = Email.new(email: 'mason.deyre@gmail.com')
+		# from_email = Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
+		# to_email = Email.new(email: 'ceojanitorial@gmail.com')
 		#
-		# from    = app_email
-		# to      = ceo_email
+		# from    = from_email
+		# to      = to_email
 		# subject = 'New Appointment Submitted'
 		# content = Content.new(type: 'text/html', value: I18n.t('appointment_notification', params: params[:first_name], params2: params[:last_name], params3: params[:phone1], params4: params[:phone2], params5: params[:phone3], var: Date.parse(params[:date]).strftime("%m/%d/%Y"), params6: params[:time], params7: params[:company], params8: params[:message]))
 		#
