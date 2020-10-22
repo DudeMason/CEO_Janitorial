@@ -1,10 +1,13 @@
 class Api::AppointmentSendersController < ApplicationController
 
 	def create
-		if AppointmentSenderMailer.send_appointment(params).deliver
-			NotificationSenderMailer.send_notification(params).deliver
+		AppointmentSenderMailer.send_appointment(params)
+		if response.status === 200 || 201 || 202 || 203 || 204
+			NotificationSenderMailer.send_notification(params)
 		else
-			puts 'Neither appointment nor notification emails were sent!'
+			puts '*****************************'
+			puts '**Neither emails were sent!**'
+			puts '*****************************'
 		end
 	end
 
