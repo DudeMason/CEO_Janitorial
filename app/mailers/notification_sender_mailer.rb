@@ -7,33 +7,37 @@ class NotificationSenderMailer < ApplicationMailer
 
 	def send_notification(params)
 
-		mail = JSON.parse("{
+		body = I18n.t("appointment_notification", params: params[:first_name], params2: params[:last_name], params3: params[:phone1], params4: params[:phone2], params5: params[:phone3], var: Date.parse(params[:date]).strftime("%m/%d/%Y"), params6: params[:time], params7: params[:company], params8: params[:message])
+
+		email = {
 			'personalizations': [
-        {
-          'to': [
-            {
-              'email': 'ceojanitorial@gmail.com'
-            }
-          ],
-          'subject': 'New Appointment Submitted'
-        }
-      ],
-      'from': {
-        'email': 'no-reply@ceojanitorial.com'
+				{
+					'to': [
+						{
+							'email': 'mason.deyre@gmail.com'
+						}
+					],
+					'subject': 'New Appointment Submitted'
+				}
+			],
+			'from': {
+				'email': 'no-reply@ceojanitorial.com',
 				'name': 'CEO Janitorial'
-      },
-      'content': [
-        {
-          'type': 'text/html',
-          'value': #{I18n.t('appointment_notification', params: params[:first_name], params2: params[:last_name], params3: params[:phone1], params4: params[:phone2], params5: params[:phone3], var: Date.parse(params[:date]).strftime("%m/%d/%Y"), params6: params[:time], params7: params[:company], params8: params[:message])}
-        }
-      ],
+			},
+			'content': [
+				{
+					'type': 'text/html',
+					'value': body
+				}
+			],
 			'mail_settings': {
 				'sandbox_mode': {
 					'enable': false
 				}
 			}
-		}")
+		}
+
+		mail = JSON.parse(email.to_json)
 
 		# app_email = Email.new(email: 'no-reply@ceojanitorial.com', name: 'CEO Appointments')
 		# ceo_email = Email.new(email: 'mason.deyre@gmail.com')
@@ -46,7 +50,7 @@ class NotificationSenderMailer < ApplicationMailer
 		# mail = Mail.new(from, subject, to, content)
 
 		sg       = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-		sg.client.mail._('send').post(request_body: mail.to_json)
+		sg.client.mail._('send').post(request_body: mail)
 		# puts response.status_code
 		# puts response.body
 		# puts response.parsed_body
