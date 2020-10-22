@@ -12,7 +12,7 @@ class AppointmentSenderMailer < ApplicationMailer
 		from    = ceo_email
 		to      = client_email
 		subject = 'Appointment Submitted'
-		content = Content.new(type: 'text/html', value: I18n.t('html_body_h2_your_appointment_has_been_submitted_h', params: params[:first_name], params2: params[:last_name], params3: params[:phone1], params4: params[:phone2], params5: params[:phone3], var: Date.parse(params[:date]).strftime("%m/%d/%Y"), params6: params[:time], params7: params[:company], params8: params[:message]))
+		content = Content.new(type: 'text/html', value: I18n.t('appointment_submitted', params: params[:first_name], params2: params[:last_name], params3: params[:phone1], params4: params[:phone2], params5: params[:phone3], var: Date.parse(params[:date]).strftime("%m/%d/%Y"), params6: params[:time], params7: params[:company], params8: params[:message]))
 
 		mail = Mail.new(from, subject, to, content)
 

@@ -26,7 +26,7 @@ class AppointmentForm extends Component {
 			this.props.toggleEdit(!this.props.edit)
 		} else {
 			this.props.appoint.addAppoint(this.state)
-			this.emailSubmit(this.state.email)
+			this.emailSubmit({...this.state})
 		}
 		this.setState({
 			first_name: undefined, last_name: undefined, phone1: undefined, phone2: undefined, phone3: undefined,
@@ -39,8 +39,7 @@ class AppointmentForm extends Component {
 		this.setState({[name]: value})
 	}
 
-	emailSubmit = (email) => {
-		const params = {...this.state, email}
+	emailSubmit = (params) => {
 		axios.post('/api/appointment_senders', params)
 		.then(res => {
 			return res.data
