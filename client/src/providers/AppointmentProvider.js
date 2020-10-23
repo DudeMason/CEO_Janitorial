@@ -5,35 +5,34 @@ const AppointmentContext = React.createContext(undefined, undefined);
 export const AppointmentConsumer = AppointmentContext.Consumer;
 
 export default class AppointmentProvider extends Component {
-
-	state = {appointments: []}
+	state = {appointments: []};
 
 	updateState = () => {
 		axios.get('/api/appointments')
 		.then(res => {
-			this.setState({appointments: res.data})
+			this.setState({appointments: res.data});
 		})
 		.catch(err => {
-			console.log(err)
-		})
+			console.log(err);
+		});
 	}
 
 	addAppoint = (appointment) => {
 		axios.post('/api/appointments', appointment)
 		.catch(err => {
-			console.log(err)
-		})
+			console.log(err);
+		});
 	}
 
 	removeAppoint = (id) => {
 		axios.delete(`/api/appointments/${id}`)
 		.then(() => {
-			const {appointments} = this.state
-			this.setState({appointments: appointments.filter(a => a.id !== id)})
+			const {appointments} = this.state;
+			this.setState({appointments: appointments.filter(a => a.id !== id)});
 		})
 		.catch(err => {
-			console.log(err)
-		})
+			console.log(err);
+		});
 	}
 
 	editAppoint = (id, appointment) => {
@@ -41,15 +40,15 @@ export default class AppointmentProvider extends Component {
 		.then(res => {
 			const appointments = this.state.appointments.map(a => {
 				if (a.id === id) {
-					return res.data
+					return res.data;
 				}
-				return a
+				return a;
 			})
-			this.setState({appointments})
+			this.setState({appointments});
 		})
 		.catch(err => {
-			console.log(err)
-		})
+			console.log(err);
+		});
 	}
 
 	render() {

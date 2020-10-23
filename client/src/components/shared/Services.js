@@ -37,6 +37,6 @@ const Services = () => (
 			</Segment>
 		</Container>
 	</div>
-)
+);
 
 export default Services;

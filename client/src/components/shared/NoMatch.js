@@ -24,6 +24,6 @@ const NoMatch = () => (
 			</a>
 		</p>
 	</div>
-)
+);
 
 export default NoMatch;

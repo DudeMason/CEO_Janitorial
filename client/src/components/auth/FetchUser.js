@@ -3,12 +3,12 @@ import axios from 'axios';
 import { AuthConsumer } from "../../providers/AuthProvider";
 
 class FetchUser extends React.Component {
-	state = {loaded: false,};
+	state = {loaded: false};
 
 	componentDidMount() {
-		const {authenticated, setUser} = this.props.auth;
+		const {user, setUser} = this.props.auth;
 
-		if (authenticated) {
+		if (user) {
 			this.loaded();
 		} else {
 			if (this.checkLocalToken()) {
@@ -17,7 +17,7 @@ class FetchUser extends React.Component {
 					setUser(res.data.data);
 					this.loaded();
 				})
-				.catch(res => {
+				.catch(() => {
 					this.loaded();
 				})
 			} else {
@@ -39,10 +39,7 @@ class FetchUser extends React.Component {
 
 const ConnectedFetchUser = (props) => (
 	<AuthConsumer>
-		{auth =>
-			<FetchUser {...props} auth={auth}/>
-		}
+		{auth => <FetchUser {...props} auth={auth}/>}
 	</AuthConsumer>
-)
-
+);
 export default ConnectedFetchUser;

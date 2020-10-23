@@ -1,9 +1,9 @@
 import React from 'react';
-import { AuthConsumer, } from "../../providers/AuthProvider";
-import { Button, Form, Segment, Header, } from 'semantic-ui-react';
+import { AuthConsumer } from "../../providers/AuthProvider";
+import { Button, Form, Segment, Header } from 'semantic-ui-react';
 
 class Login extends React.Component {
-	state = {email: '', password: ''}
+	state = {email: '', password: ''};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -47,16 +47,13 @@ class Login extends React.Component {
 					</Form>
 				</Segment>
 			</div>
-		)
+		);
 	}
 }
 
-export default class ConnectedLogin extends React.Component {
-	render() {
-		return (
-			<AuthConsumer>
-				{auth => <Login {...this.props} auth={auth}/>}
-			</AuthConsumer>
-		)
-	}
-}
+const ConnectedLogin = (props) => (
+	<AuthConsumer>
+		{auth => <Login {...props} auth={auth}/>}
+	</AuthConsumer>
+);
+export default ConnectedLogin;

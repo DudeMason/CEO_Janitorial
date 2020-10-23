@@ -10,10 +10,9 @@ class Admin extends React.Component {
 	}
 
 	render() {
-		const {functions, functions: {appointments}} = this.props
+		const {functions, functions: {appointments}} = this.props;
 
 		return (
-
 			<div align='center' style={{height: '100vh'}}>
 				<Segment align='center' compact>
 					<h1>Appointments</h1>
@@ -27,16 +26,13 @@ class Admin extends React.Component {
 					}
 				</Grid>
 			</div>
-		)
+		);
 	}
 }
 
-export default class ConnectedAdmin extends React.Component {
-	render() {
-		return (
-			<AppointmentConsumer>
-				{value => <Admin {...this.props} functions={value}/>}
-			</AppointmentConsumer>
-		)
-	}
-}
+const ConnectedAdmin = (props) => (
+	<AppointmentConsumer>
+		{value => <Admin {...props} functions={value}/>}
+	</AppointmentConsumer>
+);
+export default ConnectedAdmin

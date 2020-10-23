@@ -1,9 +1,9 @@
 import React from 'react';
-import { AuthConsumer, } from "../../providers/AuthProvider";
-import { Button, Form, Segment, Header, } from 'semantic-ui-react';
+import { AuthConsumer } from "../../providers/AuthProvider";
+import { Button, Form, Segment, Header } from 'semantic-ui-react';
 
 class Register extends React.Component {
-	state = {email: '', password: '', passwordConfirmation: '',};
+	state = {email: '', password: '', passwordConfirmation: ''};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -13,16 +13,16 @@ class Register extends React.Component {
 		if (password === passwordConfirmation)
 			handleRegister({email, password, passwordConfirmation}, history);
 		else
-			alert('Passwords Do Not Match!')
+			alert('Passwords Do Not Match!');
 	}
 
 	handleChange = (e) => {
-		const {name, value,} = e.target;
-		this.setState({[name]: value,});
+		const {name, value} = e.target;
+		this.setState({[name]: value});
 	}
 
 	render() {
-		const {email, password, passwordConfirmation,} = this.state;
+		const {email, password, passwordConfirmation} = this.state;
 
 		return (
 			<div style={{height: '100vh'}} align='center'>
@@ -62,16 +62,13 @@ class Register extends React.Component {
 					</Form>
 				</Segment>
 			</div>
-		)
+		);
 	}
 }
 
-export default class ConnectedRegister extends React.Component {
-	render() {
-		return (
-			<AuthConsumer>
-				{auth => <Register {...this.props} auth={auth}/>}
-			</AuthConsumer>
-		)
-	}
-}
+const ConnectedRegister = (props) => (
+	<AuthConsumer>
+		{auth => <Register {...props} auth={auth}/>}
+	</AuthConsumer>
+);
+export default ConnectedRegister

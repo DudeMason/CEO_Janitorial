@@ -12,7 +12,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Services from './components/shared/Services';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import { AuthConsumer, } from "./providers/AuthProvider";
+import { AuthConsumer } from "./providers/AuthProvider";
 
 const App = ({canRegister}) =>
 	<div className='background'>
@@ -32,15 +32,9 @@ const App = ({canRegister}) =>
 		</FetchUser>
 	</div>
 
-const ConnectedApp = () => {
-	return (
-		<AuthConsumer>
-			{
-				value => (
-					<App canRegister={value.canRegister}/>
-				)
-			}
-		</AuthConsumer>
-	)
-}
+const ConnectedApp = () => (
+	<AuthConsumer>
+		{value => (<App canRegister={value.canRegister}/>)}
+	</AuthConsumer>
+);
 export default ConnectedApp;

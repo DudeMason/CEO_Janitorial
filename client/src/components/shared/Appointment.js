@@ -7,7 +7,7 @@ function Appointment({
 											 phone3, company, email, date, time, message,
 											 functions: {editAppoint, removeAppoint}
 										 }) {
-	const [edit, toggleEdit] = useState(false)
+	const [edit, toggleEdit] = useState(false);
 	let appDate = new Date(`${date}`);
 	let realDate = (appDate.getUTCMonth() + 1) + "/" + appDate.getUTCDate() + "/" + appDate.getUTCFullYear();
 
@@ -76,7 +76,7 @@ function Appointment({
 					</Grid.Column>
 			}
 		</>
-	)
+	);
 }
 
 export default Appointment;

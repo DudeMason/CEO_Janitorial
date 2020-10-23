@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Button, Container } from 'semantic-ui-react';
-import Emp1 from './media/images/Emp1.png'
-import Emp2 from './media/images/Emp2.png'
-import Emp3 from './media/images/Emp3.png'
-import Emp4 from './media/images/Emp4.png'
-import Bullfrog from './media/images/Bullfrog.JPG'
-import Spas from './media/images/Spas.JPG'
+import Emp1 from './media/images/Emp1.png';
+import Emp2 from './media/images/Emp2.png';
+import Emp3 from './media/images/Emp3.png';
+import Emp4 from './media/images/Emp4.png';
+import Bullfrog from './media/images/Bullfrog.JPG';
+import Spas from './media/images/Spas.JPG';
 
 const About = () => (
 
@@ -63,6 +63,6 @@ const About = () => (
 			</p>
 		</div>
 	</div>
-)
+);
 
 export default About;
