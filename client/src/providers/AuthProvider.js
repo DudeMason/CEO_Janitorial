@@ -34,6 +34,7 @@ class AuthProvider extends Component {
 				})
 				.catch(err => {
 					console.log(err);
+					alert('User already exists.');
 				});
 			} else {
 				alert("Too many users.");
@@ -52,6 +53,7 @@ class AuthProvider extends Component {
 		})
 		.catch(err => {
 			console.log(err);
+			alert('Incorrect login');
 		});
 	}
 
