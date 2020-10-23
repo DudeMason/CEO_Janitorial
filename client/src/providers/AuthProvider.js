@@ -37,7 +37,7 @@ class AuthProvider extends Component {
 					alert('User already exists.');
 				});
 			} else {
-				alert("Too many users.");
+				alert('Too many users.');
 			}
 		})
 		.catch(err => {
@@ -51,9 +51,15 @@ class AuthProvider extends Component {
 			this.setState({user: res.data.data});
 			history.push('/citas');
 		})
-		.catch(err => {
-			console.log(err);
-			alert('Incorrect login');
+		.catch(() => {
+			axios.get('/api/users')
+			.then(res => {
+				if (res.data.find(u => user.email === u.email)) {
+					alert('Incorrect password.');
+				} else {
+					alert('Username does not exist.');
+				}
+			});
 		});
 	}
 
