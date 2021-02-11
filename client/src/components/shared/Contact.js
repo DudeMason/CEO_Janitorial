@@ -16,10 +16,6 @@ const Contact = () => (
 				</Grid.Column>
 			</Grid>
 		</div>
-		<div className='watermarkZIndex'>
-			<p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
-			</p>
-		</div>
 	</>
 )
 

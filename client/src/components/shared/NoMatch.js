@@ -12,8 +12,6 @@ const NoMatch = () => (
 			</p>
 			<a href='/'><u>Return Home</u></a>
 		</Segment>
-		<p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
-		</p>
 	</div>
 );
 
