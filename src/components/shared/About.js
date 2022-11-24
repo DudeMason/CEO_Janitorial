@@ -9,7 +9,6 @@ import Bullfrog from './media/images/Bullfrog.JPG';
 import Spas from './media/images/Spas.JPG';
 
 const About = () => (
-
 	<div style={{height: '100vh'}}>
 		<Container textAlign='justified'>
 			<Segment style={{opacity: .9, padding: 25}}>

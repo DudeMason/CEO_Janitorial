@@ -9,16 +9,17 @@ import Ceo from './media/videos/CEO.mov';
 import Ceo1 from './media/videos/CEO1.mov';
 
 const Services = () => (
-
 	<div align='center' style={{height: '100vh'}}>
-		<Container textAlign='justified'>
-			<Segment style={{opacity: .95, padding: 25}}>
-				<h1 align="center"><u>Services</u></h1>
-				<h2>Disinfection</h2>
-				<p>
-					We use state-of-the-art disinfection technology to ensure a safe and
-					healthy environment for you and your clients!
-				</p>
+		<Container>
+			<Segment style={{padding: 25}}>
+				<h1><u>Services</u></h1>
+				<div className='serviceHeader'>
+					<h2>Disinfection</h2>
+					<p>
+						We use state-of-the-art disinfection technology to ensure a safe and
+						healthy environment for you and your clients!
+					</p>
+				</div>
 				<img src={Ponytail} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
 				<img src={Hat} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
 				<img src={Dusty} width="40%" style={{margin: 5}} alt='Fogging disinfector'/>
