@@ -38,11 +38,8 @@ import Vac from './images/Vac.png';
 import Uni from './images/Uni.png';
 
 function Photos() {
-	const [currentImage, setCurrentImage] = useState(0);
 	const [isViewerOpen, setIsViewerOpen] = useState(false);
-
-	const [currentShortImage, setCurrentShortImage] = useState(0);
-	const [isShortViewerOpen, setIsShortViewerOpen] = useState(false);
+	const [imageViewer, setImageViewer]   = useState(null);
 
 	const images = [
 		Door, UniClean, Duster, Uni, VacBack, VacClose, VacNice, Vacuum,
@@ -53,29 +50,30 @@ function Photos() {
 
 	const shortImages = [
 		Fountains, Befoore, Afteer,
-		Fan, Vac, Clean, Nice2, Nice4,
+		Fan, Vac, Clean, Nice2, Nice4
 	];
 
 	const openImageViewer = useCallback(index => {
-		setCurrentImage(index);
+		images.push.apply(images, shortImages);
+
+		setImageViewer(
+			<ImageViewer
+				src={images}
+				currentIndex={index}
+				onClose={closeImageViewer}
+				backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
+			/>
+		);
+
 		setIsViewerOpen(true);
-	}, []);
+	}, [images, shortImages]);
+
 	const closeImageViewer = () => {
-		setCurrentImage(0);
 		setIsViewerOpen(false);
 	};
 
-	const openShortImageViewer = useCallback(index => {
-		setCurrentShortImage(index);
-		setIsShortViewerOpen(true);
-	}, []);
-	const closeShortImageViewer = () => {
-		setCurrentShortImage(0);
-		setIsShortViewerOpen(false);
-	};
-
 	return (
-		<div align='center' className='hotdog' style={{margin: -15}}>
+		<div align='center' style={{margin: -15}}>
 			{images.map((src, index) => (
 				<img
 					src={src}
@@ -90,34 +88,15 @@ function Photos() {
 			{shortImages.map((src, index) => (
 				<img
 					src={src}
-					onClick={() => openShortImageViewer(index)}
+					onClick={() => openImageViewer(index + images.length)}
 					width="300"
 					key={index}
 					style={{margin: "2px"}}
 					alt=""
 				/>
 			))}
-			<br/>
-			<p style={{paddingBottom: 30, opacity: .8, paddingTop: 50}} align='center'>
-			</p>
-
-			{images.push.apply(images, shortImages)},
-			{isViewerOpen &&
-			(<ImageViewer
-				src={images}
-				currentIndex={currentImage}
-				onClose={closeImageViewer}
-				backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
-			/>)
-			}
-			{shortImages.push.apply(shortImages, images)},
-			{isShortViewerOpen &&
-			(<ImageViewer
-				src={shortImages}
-				currentIndex={currentShortImage}
-				onClose={closeShortImageViewer}
-				backgroundStyle={{backgroundColor: "rgba(0,0,0,0.9)"}}
-			/>)
+			{
+				isViewerOpen && imageViewer
 			}
 		</div>
 	);
