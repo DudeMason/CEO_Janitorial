@@ -1,38 +1,16 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'semantic-ui-react';
-import { AuthConsumer } from "../../providers/AuthProvider";
 
 class Navbar extends React.Component {
-
-	rightNavItems = () => {
-		const {user, handleLogout} = this.props.auth;
-
-		if (user) {
-			return (
-				<Menu position='right'>
-					<a href={'/citas'}>
-						<Menu.Item name='appointments'>
-						</Menu.Item>
-					</a>
-					<Menu.Item name='logout' onClick={() => handleLogout(this.props.history)}>
-					</Menu.Item>
-				</Menu>
-			);
-		}
-	}
-
 	render() {
 		return (
-
 			<Menu stackable>
-
 				<Link to='/'>
 					<Menu.Item>
 						<Icon name='home'/>
 					</Menu.Item>
 				</Link>
-				{this.rightNavItems()}
 				<Menu.Menu position='right'>
 					<Link to='/about'>
 						<Menu.Item>
@@ -59,15 +37,9 @@ class Navbar extends React.Component {
 						</Menu.Item>
 					</Link>
 				</Menu.Menu>
-
 			</Menu>
 		);
 	}
 }
 
-const ConnectedNavbar = (props) => (
-	<AuthConsumer>
-		{auth => <Navbar {...props} auth={auth}/>}
-	</AuthConsumer>
-);
-export default withRouter(ConnectedNavbar);
+export default withRouter(Navbar);

@@ -1,5 +1,5 @@
 .background {
-    background-image: url('./components/shared/media/images/Background.png');
+    background-image: url('components/shared/media/images/Background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,7 +33,14 @@ p {
 .bizCard {
     margin: auto;
     display: block;
-    opacity: .95;
+    opacity: .96;
+    width: 700px;
+}
+
+@media only screen and (max-width: 740px) {
+    .bizCard {
+        width: 93%;
+    }
 }
 
 .appointmentForm input[type=text], [type=textarea] {
